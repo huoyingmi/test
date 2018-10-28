@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>01-08-01-表单标签1.html</title>
+</head>
+<body>
+	<form action="http://www.taobao.com/">
+		<p>text 明文
+			<label for="username">
+				用户名：
+			</label>
+			<input type="text" value="Tom" id="username">
+		</p>
+		<p>password 暗文
+			<label for="pswd">
+				密码：
+			</label>
+			<input type="password" value="123" id="pswd">
+		</p>
+		<p>radio 单选框
+			性别：
+			<input type="radio" name="sex" value="1">男
+			<input type="radio" name="sex" checked="checked" value="2">女
+			<input type="radio" name="sex" value="0">保密
+		</p>
+		<p>checkbox 多选框
+			爱好：
+			<input type="checkbox" name="ah" value="1">篮球
+			<input type="checkbox" name="ah" value="2" checked="checked">排球
+			<input type="checkbox" name="ah" value="3">足球
+			<input type="checkbox" name="ah" value="4" checked="checked">乒乓球
+			<input type="checkbox" name="ah" value="5">橄榄球
+		</p>
+		<p>普通按钮
+			<input type="button" value="按钮">
+		</p>
+		<p>
+			<input type="reset" value="重置">
+			<input type="submit" value="提交">
+		</p>
+		<p>图片按钮
+			<input type="image" src="../../text/02-html/img/1.jpg" >
+		</p>
+		<p>
+		<input type="file" >
+		</p>
+		<p>邮箱：
+			<input type="email">
+		</p>
+		<p>网站
+			<input type="url">
+		</p>
+		<p>年龄
+			<input type="number" name="age">
+		</p>
+		<p>生日：
+			<input type="date" name="birthday">
+		</p>
+		<p>颜色：
+			<input type="color" name="color">
+		</p>
+		<p>隐藏：
+			<input type="hidden" name="text" value="123		</p>
+		<input type="text" name="username">
+		<input type="submit" value="提交">
+		<!-- <input type="button" value="提交"> -->
+	</form>
+</body>
+</html>

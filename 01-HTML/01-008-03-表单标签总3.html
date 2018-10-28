@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单标签总.html</title>
+</head>
+<body>
+	<form action="http://www.taobao.com/">
+         <p>明文 text
+         	<input type="text" value="Tom">
+         </p>
+         <p>暗文 password
+             <input type="password" value="123">
+         </p>
+         <p>
+         	<label for="username">
+         	用户名：
+         	</label>
+             <input type="text" id="username">
+         </p>
+         <p>
+         	<input type="text" name="username">
+         	<input type="submit" value="提交">
+         </p>
+         <p>单选框 radio
+         	<label for="">
+         		性别：
+         	</label>
+         	<input type="radio" name="sex" value="1">男
+         	<input type="radio" name="sex" value="2">女
+         	<input type="radio" name="sex" value="0" checked="checked">保密
+         </p>
+         <p>多选框 checkbox
+         	爱好：
+         	<input type="checkbox" name="ah" value="a">跳绳
+         	<input type="checkbox" name="ah" value="b">跑步
+         	<input type="checkbox" name="ah" value="c">跳远
+         	<input type="checkbox" name="ah" value="d" checked="checked">骑车
+         	<input type="checkbox" name="ah" value="e">篮球
+         	<input type="checkbox" name="ah" value="f">排球
+         </p>
+         <input type="button" value="普通按钮">
+         <input type="reset" value="重置">
+         <p>图片标签
+         	<input type="image" src="../../text/02-html/img/1.jpg">
+         </p>
+         <p>邮箱：
+         	<input type="email"><br>
+         	地址：
+         	<input type="url"><br>
+         	日期：
+         	<input type="date"><br>
+         	颜色：
+         	<input type="color"><br>
+         	数字
+         	<input type="number">
+         	隐藏：
+         	<input type="hidden">
+         </p>
+         <p>提示：
+         	<input type="text" list="names">
+         	<datalist id="names">
+         		<option value=""></option>
+         	</datalist>
+         </p>
+         <p>挑选：
+         	<select name="city">
+         		<optgroup label="球类">
+         			<option value="lq">篮球</option>
+         			<option value="zq" selected>足球</option>
+         			<option value="pq">排球</option>
+         		</optgroup>
+         	</select>
+         </p>
+         <p>多行输入框
+           <textarea name="test" id="test" cols="30" rows="10"></textarea>
+         </p>
+	</form>
+</body>
+</html>
