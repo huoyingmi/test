@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-015-17-清除浮动方式6-伪类内墙法.html</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.box1{
+		width: 600px;
+		background: #ccc;
+		margin-bottom: 20px;
+	}
+	.box1:after{
+		display: block;
+		content: "";
+		clear: both;
+
+	}
+	.box1 p{
+		width: 100px;
+		background: #ddf;
+		float: left;
+	}
+	.box2{
+		width: 600px;
+		background: #ffc;
+		/*margin-top: 20px;*/
+	}
+	.box2 p{
+		width: 100px;
+		background: #faa;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p>p1</p>
+		<p>p2</p>
+		<p>p3</p>
+	</div>
+	<div class="box2">
+		<p>pp1</p>
+		<p>pp2</p>
+		<p>pp3</p>
+	</div>
+</body>
+</html>

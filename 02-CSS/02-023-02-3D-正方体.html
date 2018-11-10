@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-023-02-3D-正方体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			/*border: 1px solid #000;*/
+			margin: 100px 200px;
+			list-style: none;
+			position: relative;
+			perspective: 500px;
+			transform-style: preserve-3d;
+			transform: rotateX(45deg) rotateY(45deg);
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		li:nth-child(1){
+			background: red;
+			transform: translateZ(100px) ;
+		}
+		li:nth-child(2){
+			background: blue;
+			transform: translateX(100px) rotateY(90deg);
+		}
+		li:nth-child(3){
+			background: purple;
+			transform: translateZ(-100px);
+		}
+		li:nth-child(4){
+			background: pink;
+			transform: translateX(-100px) rotateY(-90deg);
+		}
+		li:nth-child(5){
+			background: green;
+			transform: translateY(-100px) rotateX(90deg);
+		}
+		li:nth-child(6){
+			background: yellow;
+			transform: translateY(100px) rotateX(270deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>我</li>
+		<li>们</li>
+		<li>是</li>
+		<li>动</li>
+		<li>漫</li>
+		<li>迷</li> 
+	</ul>
+</body>
+</html>

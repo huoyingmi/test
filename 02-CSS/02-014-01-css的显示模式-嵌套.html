@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-014-01-css的显示模式-嵌套.html</title>
+	<style>
+	/*div 属于容器级标签，可以嵌套其他的标签，还有header/nav/section/article/footer/h/ul/ol/dl/table 等；p 属于文本级的标签，不可以嵌套其他的标签，还有span/b/u/s/i/stong/em/del等；*/
+		.box1{
+			color: red;
+		}
+		p{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="box1">我是div1</div>
+	</div>
+	<p>
+		<div >我是div2</div>
+	</p>
+</body>
+</html>

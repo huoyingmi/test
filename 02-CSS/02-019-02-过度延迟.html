@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-019-02-过度延迟.html</title>
+	<style>
+	/*transition-delay;指定执行前延迟的时间*/
+		div{
+			width: 200px;
+			height: 200px;
+			background: #000;
+			transition-property: width,height,background;
+			transition-duration: 4s,2s,3s;
+			transition-delay: 1s;
+		}
+		div:hover{
+			width: 600px;
+			height: 600px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

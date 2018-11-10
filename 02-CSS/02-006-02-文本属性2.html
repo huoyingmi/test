@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-006-02-文本属性2.html</title>
+	<style>
+		p{
+			width: 200px;
+			background: gray;
+			/*默认正常的 是允许换行*/
+			/*white-space: normal;*/
+			/*不允许换行*/
+			/*white-space: nowrap*/
+			white-space: pre;
+			/*允许换行*/
+			/*white-space: pre-line;*/
+			/*white-space: pre-wrap;*/
+
+		}
+		span{
+			white-space: normal;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		我是段落我是段落我是段&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		落我是段落我是段落我是&nbsp;&nbsp;&nbsp;&nbsp;
+	    段落我是段落我是段落我是段落&nbsp;&nbsp;&nbsp;&nbsp;
+	    我是段落我是段落我是段落我是&nbsp;&nbsp;&nbsp;&nbsp;
+        段落我是段落我是段落我是段落
+    </p>
+     <span>a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c</span>
+</body>
+</html>

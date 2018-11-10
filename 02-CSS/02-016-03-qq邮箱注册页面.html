@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-016-03-qq邮箱注册页面.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			float: left; 
+			text-align: right;
+		}
+		a{
+			display: inline-block;
+			color: #369;
+			font-size: 14px;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+			color: #000;
+		}
+		/*头部*/
+		header{
+			width: 100%;
+			height: 62px;
+			 border: 1px solid #ccf;
+			 background: #eff4fa;
+		}
+		header .box1{
+			width:1300px;
+			background: #eff4fa;
+	    	border: 1px solid #ccf;
+			margin: 0 auto;
+		}
+		.box1 .logo{
+			width: 183px;
+			height: 62px;
+			line-height: 62px;
+			background: url(../../text/02-html/img/qqmail_02.png) no-repeat;
+			float: left;
+		}
+		.box1 nav{
+			float: right;
+		}
+		.box1 nav li{
+			list-style: none;
+			line-height: 62px;
+			float: left;
+		}
+		/*内容*/
+		section{
+			width: 1000px;
+			height: 600px;
+			margin: 0 auto;
+		}
+		section .leftimg{
+			width: 530px;
+			height: 500px;
+			background: url(../../text/02-html/img/qqmail_06.png) no-repeat 0px 140px;
+			float: left;
+		}
+		section .rightbox{
+			width: 400px;
+			height: 100%;
+			float: right;
+		}
+		.rightbox .box2{
+			width: 100%;
+			height: 400px;
+			margin-top: 100px;
+			border: 1px solid #ccf;
+			border-radius: 4px;
+		}
+		.rightbox .box2 .toubu{
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			background: #eff4fa;
+			padding: 0 40px;
+			box-sizing: border-box;
+			overflow: hidden;
+			border-bottom: 1px solid #ccf;
+		}
+		.rightbox .box2 .toubu a{
+			text-decoration: none;
+			color: #aaa;
+			font-size: 18px;
+		}
+		.rightbox .box2 .toubu a:fister-child{
+			float: left;
+		}
+		.rightbox .box2 .toubu a:last-child{
+			float: right;
+		}
+		.rightbox .box2 .toubu a:hover{
+			color: #000;
+		}
+		.box2 .shenzi{
+			width: 100%;
+			height: 270px;
+			padding: 30px 40px;
+			box-sizing: border-box;
+			margin-left: 20px;
+		}
+		.box2 .shenzi .inputer{
+			width: 250px;
+			height: 30px;
+			margin-bottom: 20px;
+		}
+		.box2 .shenzi .inputer input{
+			width: 240px;
+			height: 100%;
+			line-height: 100%;
+			border: 1px solid #369;
+			border-radius: 4px; 
+			outline: none;
+			padding: 5px 5px;
+			box-sizing: border-box;
+			color: #ccc;
+			font-size: 16px;
+			margin-left: 10px;
+		}
+		.box2 .shenzi .inputer input:focus{
+			border: 1px solid red;
+			color: red;
+		}
+		.box2 .shenzi .xuanze{
+			margin-top: 10px;
+			display: inline-block;
+			margin-left: 5px;
+			font-size: 12px;
+		}
+		.box2 .shenzi .xuanze input{
+			width: 12px;
+			height: 12px;
+			vertical-align: top;
+			margin-top: 4px;
+		}
+		.box2 .shenzi .denglu input{
+			width: 250px;
+			height: 40px;
+			background: #69c;
+			color: white;
+			font-size: 24px;
+			margin-top: 40px;
+			border-radius: 4px;
+		}
+		.box2 .dibu{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			font-size: 16px;
+			margin-left: 160px
+		}
+		/*底部*/
+		footer{
+			width: 100%;
+			height: 50px;
+			 border: 1px solid #ccf;
+			 background: #eff4fa;
+		}
+		footer ul{
+			width: 790px;
+			height: 50px;
+			margin: 0 auto;
+		}
+		footer li{
+			list-style: none;
+			width: 75px;
+			height: 50px;
+			line-height: 50px;
+			float: left;
+			font-size: 12px;
+			 margin: 0 auto;
+		}
+		footer li:last-child{
+			width: 320px;
+			font-size: 14px;
+			float: right;
+			color: #868686;
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="box1">
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li><a href="#">基本版&nbsp;|</a></li>
+					<li><a href="#">English&nbsp;|</a></li>
+					<li><a href="#">手机版&nbsp;|</a></li>
+					<li><a href="#">企业邮箱&nbsp;|</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section>
+		<div class="leftimg"></div>
+		<div class="rightbox">
+			<div class="box2">
+				<div class="toubu">
+					<a href="javascript:;">快速登录</a>
+					<a href="javascript:;">账号密码登陆</a>
+				</div>
+				<div class="shenzi">
+					<div class="inputer">
+						<input type="text" placeholder="支持手机号/QQ号/邮箱登录">
+					</div>
+					<div class="inputer">
+						<input type="password" placeholder="QQ密码">
+					</div>
+					<div class="xuanze">
+						<input type="checkbox" id="check">
+						<label for="check">下次自动登录</label>
+					</div>
+					<div class="denglu">
+						<input type="submit" value="登&nbsp;&nbsp;&nbsp;陆">
+					</div>
+				</div>
+				<div class="dibu">
+					<ul>
+						<li><a href="javascript:;">忘了密码？&nbsp;|</a></li>
+						<li><a href="javascript:;">注册新账号&nbsp;|</a></li>
+						<li><a href="javascript:;">意见反馈&nbsp;|</a></li>
+					</ul> 
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+			<ul>
+				<li><a href="https://mail.qq.com/">关于腾讯&nbsp;|</a></li>
+				<li><a href="https://mail.qq.com/">服务条款&nbsp;|</a></li>
+				<li><a href="https://mail.qq.com/">隐私政策&nbsp;|</a></li>
+				<li><a href="https://mail.qq.com/">客服中心&nbsp;|</a></li>
+				<li><a href="https://mail.qq.com/">联系我们&nbsp;|</a></li>
+				<li><a href="https://mail.qq.com/">帮助中心&nbsp;|</a></li>
+				<li>&copy;1998 - 2018 Tencent Inc. All Rights Reserved.</li>
+			</ul>
+	</footer>
+</body>
+</html>

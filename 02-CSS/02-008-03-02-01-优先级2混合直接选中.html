@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-008-03-02-01-优先级2混合直接选中.html</title>
+	<style>
+   /*各种选择器混合使用时，当直接选中，(1)先看ID选择器的个数越多越优先；(2)ID一样多时看类选择器越多越优先；(3)ID和类一样多时看标签越接近越优先；(4)当同类选择器一样多时，看就近原则*/
+       /*
+         #father #son p{
+         	color: red;
+         	font-size: 40px;
+         }
+         #father .son p{
+            color: blue;
+            font-size: 50px;
+         }
+         .father #son p{
+            color: yellow;
+         }
+         */
+         /*
+         #father .son p{
+            color: red;
+            font-weight: bold;
+         }
+         #father .son .pp1{
+            color: blue;
+         }
+         .father #son .pp1{
+            color: pink;
+         }
+         */
+         .father #son p{
+            color: purple;
+         }
+         #father .son p{
+            color: green;
+         }
+	</style>
+</head>
+<body>
+	<div class="father" id="father">
+		<div class="son" id="son">
+			<p class="pp1" id="pp1">我是段落</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-017-06-定位流-绝对定位居中.html</title>
+	<style>
+	/*水平居中：1 left:50%; 2 margin-left:-自身宽度一半*/
+	/*垂直居中：1 top:50%; 2 margin-top:-自身高度的一半*/
+		.box1{
+			width: 400px;
+			height: 400px;
+			background: red;
+			position: relative;
+		}
+		.box4{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			position: absolute;
+			top: 50%;
+			margin-top: -50px;
+			left: 50%;
+			margin-left: -50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box4"></div>
+	</div>
+</body>
+</html>

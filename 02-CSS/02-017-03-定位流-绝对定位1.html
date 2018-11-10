@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-017-03-定位流-绝对定位1.html</title>
+	<style>
+	/*相对于父元素发生移动,父元素设置相对移动*/
+	/*position: absolute;不能单独存在，需要与四条边的移动距离一起使用。*/
+	/*四条边的距离可以写一个也可以写两个，同方向上的只写一个。top/bottom、left/right*/
+	/*绝对定位是脱离标准流的，所以绝对定位的元素在标准流中占用的空间会被释放*/
+		.fa{
+			width: 400px;
+			height: 500px;
+			background: pink;
+			position: relative;
+			margin: 20px 20px;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			bottom: 0;
+			right: 50px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			position: absolute;
+			top: 30px;
+			left: 40px;
+		}
+		span{
+			width: 200px;
+			height: 100px;
+			background: green;
+			margin-left: 20px;
+			padding-top: 20px;
+			position: absolute;
+			right: 0;
+			bottom: 450px;
+		}
+	</style>
+</head>
+<body>
+	<div class="fa">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<span>span</span>
+	</div>
+</body>
+</html>

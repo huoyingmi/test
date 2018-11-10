@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-021-07-03-2D-案例翻转菜单2.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.box1{
+			width: 700px;
+			/*height: 600px;*/
+			margin:100px; 
+		}
+		.box1 .ul1{
+			width: 700px;
+			height: 80px;
+			background: #000;
+		}
+		.box1 .ul1>li{
+			width: 100px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			background: yellow;
+			float: left;
+			margin-left: 30px;
+			font-size: 26px;
+			font-weight: bold;
+			/*letter-spacing: 20px;*/
+		}
+		.ul2>li{
+			width: 100px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			background: pink;
+			border-bottom: 1px solid #ccf;
+			font-size: 18px;
+			transform: rotateY(180deg);
+			opacity: 0;
+			transition: all 1s linear;
+		}
+		.ul1>li:hover .ul2>li{
+			transform: rotateY(0deg);
+			opacity: 1;
+		}
+		.ul1>li:hover .ul2>li:nth-child(1){
+			/*transition-timing-function: ease;*/
+			transition-delay: 0ms;
+		}
+		.ul1>li:hover .ul2>li:nth-child(2){
+			/*transition-timing-function: linear;*/
+			transition-delay: 200ms;
+		}
+		.ul1>li:hover .ul2>li:nth-child(3){
+			/*transition-timing-function: ease-in;*/
+			transition-delay: 400ms;
+		}
+		.ul1>li:hover .ul2>li:nth-child(4){
+			/*transition-timing-function: ease-out;*/
+			transition-delay: 600ms;
+		}
+		.ul1>li:hover .ul2>li:nth-child(5){
+			/*transition-timing-function: ease-in-out;*/
+			transition-delay: 800ms;
+		}
+		.ul1>li:hover .ul2>li:nth-child(6){
+			/*transition-timing-function: cubic-bezier(1,2,1,3);*/
+			transition-delay: 1000ms;
+		}
+		.ul1>li .ul2>li:nth-child(6){
+			/*transition-timing-function: ease;*/
+			transition-delay: 0ms;
+		}
+		.ul1>li .ul2>li:nth-child(5){
+			/*transition-timing-function: linear;*/
+			transition-delay: 200ms;
+		}
+		.ul1>li .ul2>li:nth-child(4){
+			/*transition-timing-function: ease-in;*/
+			transition-delay: 400ms;
+		}
+		.ul1>li .ul2>li:nth-child(3){
+			/*transition-timing-function: ease-out;*/
+			transition-delay: 600ms;
+		}
+		.ul1>li .ul2>li:nth-child(2){
+			/*transition-timing-function: ease-in-out;*/
+			transition-delay: 800ms;
+		}
+		.ul1>li .ul2>li:nth-child(1){
+			/*transition-timing-function: cubic-bezier(1,2,1,3);*/
+			transition-delay: 1000ms;
+		}
+		.box2{
+			width: 700px;
+			height: 420px;
+			background: purple;
+			color: white;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<ul class="ul1">
+			<li>
+				凉菜
+				<ul class="ul2">
+					<li>醋泡花生米</li>
+					<li>干瘪豆角</li>
+					<li>凉拌海带丝</li>
+					<li>刀拍黄瓜</li>
+					<li>凉拌皮蛋</li>
+					<li>泡凤爪</li>
+				</ul>
+			</li>
+			<li>
+				热菜
+				<ul class="ul2">
+					<li>梅菜扣肉</li>
+					<li>番茄鸡蛋</li>
+					<li>大盘鸡</li>
+					<li>水煮鱼</li>
+					<li>酸菜鱼</li>
+					<li>孜然羊肉</li>
+				</ul>
+			</li>
+			<li>
+				甜品
+				<ul class="ul2">
+					<li>川贝雪梨</li>
+					<li>木瓜牛奶</li>
+					<li>水果拼盘</li>
+					<li>双皮奶</li>
+					<li>西米露</li>
+					<li>蛋挞</li>
+				</ul>
+			</li>
+			<li>
+				茶点
+				<ul class="ul2">
+					<li>蜜饯木瓜</li>
+					<li>花生酥</li>
+					<li>红皮花生</li>
+					<li>葵瓜子</li>
+					<li>西瓜子</li>
+					<li>瓜仁酥</li>
+				</ul>
+			</li>
+			<li>
+				酒水
+				<ul class="ul2">
+					<li>法国千红</li>
+					<li>法国比诺</li>
+					<li>啤酒</li>
+					<li>高粱酒</li>
+					<li>二锅头</li>
+					<li>82年拉菲</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="box2">菜品，是指各类品种的菜。 如：太极白玉翡翠羹、剁椒鱼头、小炒肉等。拼音：cài pǐn
+注音：ㄘㄞˋ ㄆㄧㄣˇ各类品种的菜。 南朝 梁 沉约 《与约法师书》：“岁时包篚，每见请求，凡厥菜品，必令以荐。” 宋 洪巽 《旸谷漫录》：“菜品第一为葱虀。”菜品是指一道菜，各大饭店都有几十道菜品供客户选择，如：外婆红烧肉、剁椒鱼头、小炒肉。添加菜品摄影图片，再通过菜谱制作公司设计印刷出来，这样更方便于客户选择一目了然。</div>
+	</div>
+</body>
+</html>

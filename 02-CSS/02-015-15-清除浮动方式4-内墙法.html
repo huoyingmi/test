@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-015-15-清除浮动的方式4-内墙法.html</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.box1{
+		width: 600px;
+		background: #ccc;
+		margin-bottom: 20px;
+	}
+	.box1 p{
+		width: 100px;
+		background: #ddf;
+		float: left;
+	}
+	/*在第一个盒子的最后新加一个空的块状元素并设clear值或高度，不影响margin值设置*/
+	.box1 .dv{
+		width: 100px;
+		height: 20px;
+		clear: both;
+	}
+	.box2{
+		width: 600px;
+		background: #ffc;
+		/*margin-top: 20px;*/
+	}
+	.box2 p{
+		width: 100px;
+		background: #faa;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p>p1</p>
+		<p>p2</p>
+		<p>p3</p>
+		<div class="dv"></div>
+	</div>
+	<div class="box2">
+		<p>pp1</p>
+		<p>pp2</p>
+		<p>pp3</p>
+	</div>
+</body>
+</html>
