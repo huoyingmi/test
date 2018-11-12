@@ -8,16 +8,17 @@
 			margin: 0;
 			padding: 0;
 		}
+		body{
+			perspective: 500px;
+		}
 		ul{
 			width: 200px;
 			height: 200px;
-			/*border: 1px solid #000;*/
-			margin: 100px 200px;
+			margin: 100px auto;
 			list-style: none;
 			position: relative;
-			perspective: 500px;
 			transform-style: preserve-3d;
-			transform: rotateX(45deg) rotateY(45deg);
+			transform: rotateX(12deg) rotateY(-20deg);
 		}
 		li{
 			width: 200px;
@@ -28,40 +29,46 @@
 			top: 0;
 			left: 0;
 		}
+		/*前面*/
 		li:nth-child(1){
 			background: red;
 			transform: translateZ(100px) ;
 		}
+		/*下面*/
 		li:nth-child(2){
 			background: blue;
-			transform: translateX(100px) rotateY(90deg);
+			transform: translateY(100px) rotateX(90deg);
 		}
+		/*后面*/
 		li:nth-child(3){
 			background: purple;
-			transform: translateZ(-100px);
+			transform: translateZ(-100px) rotateX(180deg);
 		}
+		/*上面*/
 		li:nth-child(4){
 			background: pink;
-			transform: translateX(-100px) rotateY(-90deg);
-		}
-		li:nth-child(5){
-			background: green;
 			transform: translateY(-100px) rotateX(90deg);
 		}
+		/*左面*/
+		li:nth-child(5){
+			background: green;
+			transform: translateX(-100px) rotateY(-90deg);
+		}
+		/*右面*/
 		li:nth-child(6){
 			background: yellow;
-			transform: translateY(100px) rotateX(270deg);
+			transform: translateX(100px) rotateY(90deg);
 		}
 	</style>
 </head>
 <body>
 	<ul>
 		<li>我</li>
-		<li>们</li>
+		 <li>们</li>
 		<li>是</li>
 		<li>动</li>
 		<li>漫</li>
-		<li>迷</li> 
+		<li>迷</li>  
 	</ul>
 </body>
 </html>
