@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-002-01-案例免登录提示框css.html</title>
+	<style>
+	    div{
+			width: 300px;
+			height: 100px;
+			border: 1px solid #000;
+			display: none;
+		}
+		input:checked+div{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<input type="checkbox">下次免登录
+	<div>为了安全着想......</div>
+</body>
+</html>

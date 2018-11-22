@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-007-案例换肤.html</title>
+	<link rel="stylesheet" href="css/pifu1.css" id="pf">
+	<script>
+		function toPifu1(){
+			console.log('1');
+			var box=document.getElementById('pf');
+			console.log(box)
+			box.href='css/pifu1.css';
+		}
+		function toPifu2(){
+			console.log('2');
+			document.getElementById('pf').href='css/pifu2.css';
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="皮肤1" onclick="toPifu1()">
+	<input type="button" value="皮肤2" onclick="toPifu2()">
+</body>
+</html>

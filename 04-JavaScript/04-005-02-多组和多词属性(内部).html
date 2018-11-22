@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-005-02-多组和多词属性(内部).html</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			/*background: red;*/
+			border: 5px solid #000;
+		}
+	</style>
+	<script>
+		function toBig(){
+			document.getElementById('box').style.width='400px';
+			document.getElementById('box').style.height='400px';
+			document.getElementById('box').style.backgroundColor='red';
+		}
+		function toSmall(){
+			document.getElementById('box').style.width='200px';
+			document.getElementById('box').style.height='200px';
+			document.getElementById('box').style.backgroundColor='blue';
+		}
+	</script>
+</head>
+<body>
+	<div id="box" onmouseover="toBig()" onmouseout="toSmall()"></div>
+	<!-- <div id="box" onmouseover="document.getElementById('box').style.borderTopColor='blue';document.getElementById('box').style.width='400px';document.getElementById('box').style.height='400px';document.getElementById('box').style.backgroundColor='blue';"
+		onmouseout="document.getElementById('box').style.width='200px';document.getElementById('box').style.height='200px';document.getElementById('box').style.borderTopColor='red';document.getElementById('box').style.backgroundColor='#fff';"></div> -->
+</body>
+</html>
