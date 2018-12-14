@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图自动播放.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;	
+		}
+		.slideshow{
+			width: 700px;
+			height: 450px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			position: relative;
+			cursor: pointer;
+		}
+		.ul1 li{
+			width: 700px;
+			height: 450px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	.ul1 li:nth-child(1){
+		background: #ddd;
+	}
+	.ul1 li:nth-child(2){
+		background: #ccc;
+	}
+	.ul1 li:nth-child(3){
+		background: #bbb;
+	}
+	.ul1 li img{
+		width: 700px;
+		height: 450px;
+	}
+	span{
+		display: inline-block;
+		width: 30px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		background: rgba(0,0,0,0.3);
+		color: #fff;
+		font-size: 25px;
+		font-weight: bold;
+		position: absolute;
+		top: 200px;
+	}
+	.span1{
+		left: 0;
+	}
+	.span2{
+		right: 0;
+	}
+	.ul2{
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+	}
+	.ul2 li{
+		float: left;
+		width: 20px;
+		height: 20px;
+		background: #ddd;
+		margin-left: 20px;
+		border: 1px solid red;
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<div class="slideshow">
+		<ul class="ul1">
+			<li><a href="#">
+				<img src="img/md1.jpg" alt="">
+			</a></li>
+			<li><a href="#">
+				<img src="img/md2.jpg" alt="">
+			</a></li>
+			<li><a href="#">
+				<img src="img/bw3.jpg" alt="">
+			</a></li>
+		</ul>
+		<span class="span1">&lt;</span>
+		<span class="span2">&gt;</span>
+		<ul class="ul2">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oImg = document.querySelectorAll('.ul1 img'); 
+	var oSpan1 = document.querySelectorAll('.span1'); 
+	var oSpan2 = document.querySelectorAll('.span2'); 
+	var oLi = document.querySelectorAll('.ul2 li'); 
+	// console.log(oImg);
+	// console.log(oSpan1);
+	// console.log(oSpan2);
+	// console.log(oLi);
+	setTnterval(function(){
+
+	},2000);
+</script>
+</html>

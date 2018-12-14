@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例倒计时</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#time{
+			width: 400px;
+			height: 400px;
+			line-height: 400px;
+			font-size: 20px;
+			text-align: center;
+			background: #000;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+		<!-- 距离活动结束还有1小时4分钟3秒		 -->
+	</div>
+</body>
+<script>
+	var oTime = document.getElementById('time');
+
+	// oTime.innerHTML = '距离活动结束还有1小时4分钟3秒';
+
+	var endTime = new Date('2018-12-8 15:49:00'); 
+
+	var timer = 0;
+	// var allMinsecond = endTime.getTime()-Date.now();
+	// var allSecond = parseInt(allMinsecond/1000);
+	// var iHour = parseInt(allSecond/3600);
+	// var iMinute = parseInt((allSecond%3600)/60);
+	// var iSecond = parseInt(allSecond%3600)%60;
+
+	// oTime.innerHTML = '距离活动结束还有'+iHour+'小时'+iMinute+'分钟'+iSecond+'秒';
+
+	function to2str(num){
+		return num<10 ? '0'+num : ''+num;
+	}
+	function handleTime(){
+		var allMinsecond = endTime.getTime()-Date.now();
+		if(allMinsecond <= 0){
+			allMinsecond = 0;
+			clearInterval(timer);
+			console.log('1');
+		}
+		var allSecond = parseInt(allMinsecond/1000);
+		var iHour = parseInt(allSecond/3600);
+		var iMinute = parseInt((allSecond%3600)/60);
+		var iSecond = parseInt(allSecond%3600)%60;
+		oTime.innerHTML = '距离活动结束还有'+to2str(iHour)+'小时'+to2str(iMinute)+'分钟'+to2str(iSecond)+'秒';
+	}
+	// setInterval(handleTime,1000);
+	timer = setInterval(handleTime,1000);
+	handleTime();
+	// oTime.innerHTML = '距离活动结束还有'+to2str(iHour)+'小时'+to2str(iMinute)+'分钟'+to2str(iSecond)+'秒';
+
+	// setInterval(function(){
+	// 	var allMinsecond = endTime.getTime()-Date.now();
+	// 	var allSecond = parseInt(allMinsecond/1000);
+	// 	var iHour = parseInt(allSecond/3600);
+	// 	var iMinute = parseInt((allSecond%3600)/60);
+	// 	var iSecond = parseInt(allSecond%3600)%60;
+	// 	oTime.innerHTML = '距离活动结束还有'+to2str(iHour)+'小时'+to2str(iMinute)+'分钟'+to2str(iSecond)+'秒';
+	// },1000);
+</script>
+</html>

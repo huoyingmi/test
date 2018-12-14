@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 1;
+	function fn(){
+		console.log("fn",a);
+	}
+	fn();
+	console.log("global",a);
+
+	var a = 1;
+	function fn(){
+		console.log("fn",a);
+		function fn1(){
+			console.log("fn1",a);
+		}
+		fn1();
+	}
+	fn();
+	console.log("global",a);
+
+	var a = 1;
+	function fn(){
+		console.log("fn",a);
+		a = 2;
+		function fn1(){
+			console.log("fn1",a);
+		}
+		fn1();
+	}
+	fn();
+	console.log("global",a);
+</script>
+</html>

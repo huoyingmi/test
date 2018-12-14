@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-031-02-全局变量2.html</title>
+</head>
+<body>
+</body>
+<script>
+	var a = 1;
+	function fn1(){
+		console.log("fn1",a);
+		var a = 2;
+		function fn2(){
+			console.log("fn2",a);
+		}
+		fn2();
+	}
+	console.log("global1",a);
+</script>
+</html>

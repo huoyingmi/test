@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-031-04-作用域决定1.html</title>
+</head>
+<body>
+</body>
+<script>
+	//var a = 1;局部变量
+	function fn(){
+		var a = 2; 
+	}
+	fn();
+	console.log(a);
+	//a = 1;全局变量
+	function fn(){
+		 a = 2; 
+	}
+	fn();
+	console.log(a);
+</script>
+</html>

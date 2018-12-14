@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数码时间.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#time{
+			width: 400px;
+			height: 400px;
+			line-height: 400px;
+			font-size: 20px;
+			text-align: center;
+			background: #000;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+	</div>
+</body>
+<script>
+	var oTime = document.getElementById('time');
+	// var nowtime = new Date();
+	// var iHour = nowtime.getHours();
+	// var iMinute = nowtime.getMinutes();
+	// var iSecond = nowtime.getSeconds();
+	function to2str(num){
+		return num<10 ? '0'+num : ''+num;
+	}
+	// oTime.innerHTML = iHour + ':'+ iMinute +':' +iSecond;
+	function handletime(){
+		var nowtime = new Date();
+		var iHour = nowtime.getHours();
+		var iMinute = nowtime.getMinutes();
+		var iSecond = nowtime.getSeconds();
+		oTime.innerHTML = to2str(iHour) + ':'+ to2str(iMinute) +':' +to2str(iSecond);
+	}
+	setInterval(handletime,1000);
+	handletime();
+	//setInterval(function(){
+		// var nowtime = new Date();
+		// var iHour = nowtime.getHours();
+		// var iMinute = nowtime.getMinutes();
+		// var iSecond = nowtime.getSeconds();
+		// oTime.innerHTML = to2str(iHour) + ':'+ to2str(iMinute) +':' +to2str(iSecond);
+	//},100);
+</script>
+</html>

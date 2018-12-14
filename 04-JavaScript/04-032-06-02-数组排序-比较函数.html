@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-032-06-数组排序-比较函数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [3,27,8,95,33,210,15];
+	console.log("::1",arr1);
+	arr1.sort(function(n1,n2){
+		// console.log(n1,n2);
+		if(n1<n2){
+			return -1;
+		}else if(n1>n2){
+			return 1;
+		}else{
+			return 0;
+		}
+	})
+	console.log("::1",arr1);
+</script>
+
+</html>

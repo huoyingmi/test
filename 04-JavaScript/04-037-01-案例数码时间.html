@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例数码时间.html</title>
+	<style>
+		#timer{
+			width: 400px;
+			height: 400px;
+			line-height: 400px;
+			text-align: center;
+			background: #000;
+			font-size: 24px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer"></div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	function to2Str(num){
+		// if(num<10){
+		// 	return '0' + num;
+		// }else{
+		// 	return '' + num;
+		// }
+		return num<10 ? '0'+num : ''+num;
+	}
+	function changeTime(){
+		var today = new Date();
+		var iHour = today.getHours(),iMinute = today.getMinutes(),iSecond = today.getSeconds();
+	    var sTime = to2Str(iHour) + ":" +to2Str(iMinute) + ":" +to2Str(iSecond); 
+	    oTimer.innerHTML = sTime;
+	}
+    setInterval(changeTime,1000);
+	 changeTime();
+</script>
+</html>

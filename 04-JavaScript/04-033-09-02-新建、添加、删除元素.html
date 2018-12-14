@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新建、添加、删除元素.html</title>
+</head>
+<body>
+	<input type="button" id="btn1" value="添加1">
+	<input type="button" id="btn2" value="添加2">
+	<input type="text" id="txt">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oTxt = document.getElementById('txt');
+	var oUl = document.getElementById('ul1');
+
+	oBtn1.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value;
+		oUl.appendChild(oLi);
+		oUl.insertBefore(oLi,oUl.firstElementChild);
+		// oUl.insertAfter(oLi,oUl.lastElementChild);
+
+		var aA = document.createElement('a');
+		aA.innerHTML = 'del';
+		aA.href = 'javascript:;';
+		aA.onclick = function(){
+			oUl.removeChild(oLi);
+		}
+		oLi.appendChild(aA);
+	}
+	oBtn2.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value;
+		oUl.appendChild(oLi);
+		// oUl.insertBefore(oLi,oUl.firstElementChild);
+		oUl.insertAfter(oLi,oUl.lastElementChild);
+
+		var aA = document.createElement('a');
+		aA.innerHTML = 'del';
+		aA.href = 'javascript:;';
+		aA.onclick = function(){
+			oUl.removeChild(oLi);
+		}
+		oLi.appendChild(aA);
+	}
+
+</script>
+
+</html>

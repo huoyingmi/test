@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-031-案例月历.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 380px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 100px 100px;
+			background: #ccc;
+		}
+		li{
+			float: left;
+			list-style: none;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			background: #000;
+			margin-left: 20px;
+			margin-top: 20px;
+			color: #fff;
+			cursor: pointer;
+		}
+		.clearfix:after{
+			display: block;
+			content: "";
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
+		.clearfix{
+			*zoom:1;
+		}
+		h2{
+			font-size: 20px;
+			margin: 20px 0 10px 20px;
+		}
+		p{
+			margin-left: 20px;
+			font-size: 18px;
+		}
+		.active{
+			color: #000;
+			background: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="clearfix">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div id="dsc">
+			<h2>一月</h2>
+			<p>踏青</p>
+		</div>
+	</div>
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	var oDiv = document.getElementById('dsc');
+	var arr = ['去踏青','旅游','野炊','请客吃饭','爬山','上香','走亲戚','出国','睡觉','在家','学习','上课'];
+	for(var i=0; i<aLi.length; i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			for(var j=0; j<aLi.length; j++){
+				aLi[j].className = "";
+			}
+			this.className = 'active';
+			oDiv.innerHTML = "<h2>"+(this.index+1)+"月</h2><p>"+arr[this.index]+"</p>";
+		}
+		
+	}
+</script>
+</html>

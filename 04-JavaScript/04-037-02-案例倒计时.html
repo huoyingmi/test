@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例倒计时.html</title>
+	<style>
+		#time{
+			width: 600px;
+			height: 600px;
+			line-height: 600px;
+			text-align: center;
+			background: #000;
+			font-size: 24px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+		距离活动结束的时间还有15小时23分40秒
+	</div>
+</body>
+<script>
+	//先获取元素
+	var oTime = document.getElementById('time');
+	// 给元素 oTime 赋值
+	// oTime.innerHTML = "距离活动结束的时间还有15小时23分40秒";
+	//获取结束的时间
+	var endTime = new Date('2018-12-8 00:10:00');
+	// 想获得现在距离活动结束还有多长时间，可以用结束时间距离1970-1-1 00:00:00的时间减去现在距离1970-1-1 00:00:00的时间得到总共的毫秒数
+	// var allMinsecond = endTime.getTime()-Date.now();
+	// 将总的毫秒数转换成秒数
+	// var allSecond = parseInt(allMinsecond/1000);
+	// 将总的秒数转换成小时。分钟、秒数
+	// var iHour = parseInt(allSecond/3600);
+	// var iMinute = parseInt((allSecond % 3600)/60);
+	// var iSecond = parseInt(allSecond % 3600)% 60;
+	// 给 oTime 重新赋值，前面赋的值删除
+	// oTime.innerHTML = "距离活动结束的时间还有"+iHour+'小时'+iMinute+'分钟'+iSecond+'秒';
+	// 转换时间的格式为00小时00分钟00秒，用if判断
+	var timer = 0;
+	function to2str(num){
+		return num<10 ? "0"+num : ""+num;
+	}
+    // 调用函数
+	function handletime(){
+    	var allMinsecond = endTime.getTime()-Date.now();
+    	if(allMinsecond <= 0){
+    		allMinsecond = 0;
+    		clearInterval(timer);
+    	}
+    	var allSecond = parseInt(allMinsecond/1000);
+    	var iHour = parseInt(allSecond/3600);
+		var iMinute = parseInt((allSecond % 3600)/60);
+		var iSecond = parseInt(allSecond % 3600)% 60;
+		//oTime.innerHTML = "距离活动结束的时间还有"+iHour+'小时'+iMinute+'分钟'+iSecond+'秒';
+		oTime.innerHTML = "距离活动结束的时间还有"+to2str(iHour)+'小时'+to2str(iMinute)+'分钟'+to2str(iSecond)+'秒';
+    }
+	// 使计时器自动循环更新时间，用循环定时器,将上面所有的var部分写在定时器中
+  //   setInterval(function(){
+  //   	var allMinsecond = endTime.getTime()-Date.now();
+  //   	var allSecond = parseInt(allMinsecond/1000);
+  //   	var iHour = parseInt(allSecond/3600);
+		// var iMinute = parseInt((allSecond % 3600)/60);
+		// var iSecond = parseInt(allSecond % 3600)% 60;
+		// oTime.innerHTML = "距离活动结束的时间还有"+iHour+'小时'+iMinute+'分钟'+iSecond+'秒';
+  //   },500);
+  setInterval(handletime,500);
+    handletime();
+</script>
+</html>

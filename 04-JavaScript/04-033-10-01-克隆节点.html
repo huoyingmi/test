@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>克隆节点.html</title>
+	<style>
+		#box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 20px;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			color:#fff;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn1" value="克隆1">
+	<input type="button" id="btn2" value="克隆2">
+	<div id="box1">我是盒子</div>
+	<div id="box2">我是盒子</div>
+</body>
+<script>
+	//获取元素
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	//添加事件函数
+	oBtn1.onclick = function(){
+		//进行克隆(只克隆节点，不克隆节点内容)
+		var newBox1 = oBox1.cloneNode();
+		document.body.appendChild(newBox1);
+
+	}
+	oBtn2.onclick = function(){
+		var newBox2 = oBox2.
+		document.body.appendChild(newBox2);
+	}
+</script>
+
+</html>
