@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002.DOM事件等级.html</title>
+	<style>
+		#btn{
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		oBtn.style.background = '#fff';
+	}
+</script>
+</html>

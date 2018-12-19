@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画基础-改变透明度.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+			margin-top: 20px;
+			margin-left: 100px;
+		}
+		#box{
+			opacity: 0.3;
+			width: 100px;
+			height: 100px;
+			background: #f00;
+			margin-top: 20px;
+			margin-left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+	<div id="box"></div>
+	<div class="box1" "></div>
+</body>
+<script>
+	//获取元素
+	var oBtn = document.getElementById('btn');
+	console.log(oBtn);
+	var oBox = document.getElementById('box');
+	console.log(oBox);
+	var timer = 0;
+	//添加事件函数
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		var isPeed = 0;
+		// console.log(getComputedStyle(oBox,false)['opacity']);
+		timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(oBox,false)['opacity']);
+			// console.log(current);
+			current = Math.round(current * 100);
+			// console.log(current);
+			if(current > 100){
+				isPeed = -2;
+			}else{
+				isPeed = 2;
+			}
+			// console.log(current,isPeed);
+			if(Math.abs(100 - current) < Math.abs(isPeed)){
+				oBox.style.opacity = '1';
+				clearInterval(timer);
+			}else{
+				oBox.style.opacity = (current + isPeed) / 100;
+			}
+			// console.log(current,isPeed);
+		},30)
+	}
+</script>
+</html>

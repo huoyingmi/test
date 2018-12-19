@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-对象-字面量创建对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//定义一个对象
+	var obj = {
+		name:'Tom',
+		//name:'Leo',属性无序唯一
+		age:18,
+		friends:["Mary","Amy"],
+		sayHi:function(){
+			console.log('hi');
+		}
+		// sayHi();
+	}
+	console.log(obj);
+	console.log(obj.name);
+	// obj.name = 'Leo';
+	obj.name = 'Mary';
+	console.log(obj.name);
+	console.log(obj);
+
+	obj.sex = 'male';
+	console.log(obj);
+	console.log(obj.sex);
+
+	obj.sayHi();
+	// sayHi();
+</script>
+</html>

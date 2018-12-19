@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-对象案例-轮播图.html</title>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+<script>
+	function Carousel(id){
+		//1.罗列属性
+		this.oBox = document.getElementById(id);
+		console.log(this.oBox);
+		//2.初始化DOM节点
+		this.init();
+	}
+	Carousel.prototype.init = function(){
+
+	}
+	new Carousel('box1',['../img/list1.jpg','../img/list2.jpg','../img/list3.jpg']);
+</script>
+</html>

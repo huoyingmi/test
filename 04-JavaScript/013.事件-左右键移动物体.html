@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013.事件-左右键移动物体</title>
+	<style>
+		#box{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	document.onkeydown = function(ev){
+		// console.log(ev.keyCode);
+		if(ev.keyCode == 37){
+			oBox.style.left = oBox.offsetLeft - 10 + 'px';
+		}else if(ev.keyCode == 39){
+			oBox.style.left = oBox.offsetLeft + 10 +'px';
+		}
+	}
+</script>
+</html>

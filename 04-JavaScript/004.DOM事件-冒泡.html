@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004.DOM事件-冒泡.html</title>
+	<style>
+		.main{
+			width: 600px;
+			height: 600px;
+			background: #ccc;
+		}
+		#box{
+			width: 100px;
+			height: 500px;
+			background: #999;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<button id="btn">移除</button>
+		<div id="box"></div>
+	</div>
+</body>
+<script>
+	//获取元素
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	//添加点击事件
+	oBtn.addEventListener('click',function(ev){
+		oBox.style.display = 'block';
+		//阻止事件冒泡 event.stopPropagation()
+		event.stopPropagation()
+	},false);
+</script>
+</html>

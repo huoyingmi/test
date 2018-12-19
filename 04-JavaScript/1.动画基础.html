@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画基础.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+			margin-top: 30px;
+			position: absolute;
+			top: 40px;
+		}
+		#line{
+			width: 600px;
+			height: 600px;
+			border-right: 1px solid #000;
+			position: absolute;
+			top: 40px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+	<div id="box"></div>
+	<div id="line"></div>
+</body>
+<script>
+	//1.获取元素
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = 0;
+	//2.添加事件函数
+	oBtn.onclick = function(){
+		// oBox.style.left = '600px';
+	//3.添加过度效果，用循环定时器
+	//4.当动画运动到600px时，动画效果停下，要清除定时器，用if进行判断
+		timer = setInterval(function(){
+			if(oBox.offsetLeft == 600){
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + 10 +'px';
+			}
+		},30);
+	}
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画基础-伸缩菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#fat{
+			width: 400px;
+			height: 400px;
+			background: #ccc;
+			position: absolute;
+			top: 0;
+			left: -400px;
+		}
+		#son{
+			width: 100px;
+			height: 400px;
+			background: #f67;
+			position: absolute;
+			top: 0;
+			right: -100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="fat">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	//获取元素
+	var oFat = document.getElementById('fat');
+	var timer = 0;
+	//添加事件函数
+	oFat.onmouseover = function(){
+		clearInterval(timer);
+		var isPed = 0;
+		timer = setInterval(function(){
+			if(oFat.offsetLeft > 0){
+				isPed = -10;
+			}else{
+				isPed = 10;
+			}
+			if(Math.abs(0 - oFat.offsetLeft) < Math.abs(isPed)){
+				oFat.style.left = '0px';
+				clearInterval(timer);
+			}else{
+				oFat.style.left = oFat.offsetLeft + isPed + 'px';
+			}
+		},30);	
+	}
+	oFat.onmouseout = function(){
+		clearInterval(timer);
+		var isPed = 0;
+		timer = setInterval(function(){
+			if(oFat.offsetLeft > -400){
+				isPed = -10;
+			}else{
+				isPed = 10;
+			}
+			if(Math.abs(-400 - oFat.offsetLeft) < Math.abs(isPed)){
+				oFat.style.left = '-400px';
+				clearInterval(timer);
+			}else{
+				oFat.style.left = oFat.offsetLeft + isPed + 'px';
+			}
+		},30);	
+	}
+</script>
+</html>

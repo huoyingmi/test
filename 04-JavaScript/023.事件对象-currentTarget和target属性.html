@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023.事件对象-currentTarget和target属性.html</title>
+	<style>
+		#father{
+			width: 400px;
+			height: 400px;
+			background: #ccc;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oFather = document.getElementById('father');
+
+	oBox.addEventListener('mouseover',function(ev){
+		console.log(ev.type)
+	},false);
+</script>
+</html>
