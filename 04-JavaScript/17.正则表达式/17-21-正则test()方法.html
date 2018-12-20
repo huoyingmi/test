@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-21-正则test()方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'a1b2c3d4';
+	var reg = /[a-z]/g;
+	console.log(str);
+	console.log(reg.lastIndex);//从下标0开始匹配
+	console.log(reg.test(str));//测试是否有匹配到正则的字符串
+	console.log(reg.lastIndex);
+	console.log(reg.test(str));
+	console.log(reg.lastIndex);
+	console.log(reg.test(str));
+	console.log(reg.lastIndex);
+	console.log(reg.test(str));
+</script>
+</html>
