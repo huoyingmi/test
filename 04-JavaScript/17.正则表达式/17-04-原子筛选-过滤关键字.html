@@ -18,7 +18,6 @@
 	oBtn.onclick = function(){
 		var oLi = document.createElement('li');
 		var reg = /李小姐|包小姐/;
-
 		//oLi.innerHTML = oTxt.value;
 		oLi.innerHTML = oTxt.value.replace(reg,'*');
 		oUl.appendChild(oLi);

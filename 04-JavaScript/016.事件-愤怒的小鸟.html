@@ -21,7 +21,21 @@
 			height: 60px;
 			background-image: url(img/bird.jpg);
 			background-repeat: no-repeat;
-			background-size: cover;
+			background-size: contain;
+		}
+		.topline{
+			position: absolute;
+			top: 0;
+			left: 100%;
+			width: 30px;
+			background: green;
+		}
+		.bottomline{
+			position: absolute;
+			bottom: 0;
+			left: 100%;
+			width: 30px;
+			background: green;
 		}
 	</style>
 </head>
@@ -31,19 +45,55 @@
 	</div>
 </body>
 <script>
+	function getRandom(min,max){
+		return Math.round(min+(max-min)*Math.random());
+	}
 	//获取元素
 	var oBird = document.getElementById('bird');
+	var oWrap = document.getElementById('wrap');
 	//获取定时器
-	var BirdTimer = 0;
+	var BirdTimer = 0,addlineTimer = 0;
 	//使小鸟向下运动，定义初始速度0
 	var iSpeed = 0;
+	var spaceHeight = 270;
+
+	function addline(){
+		var oTopline = document.createElement('div');
+		var oBottomline = document.createElement('div');
+		oTopline.className = 'topline';
+		oBottomline.className = 'bottomline';
+		var h = getRandom(100,300);
+		oTopline.style.height = h + 'px';
+		oBottomline.style.height = oWrap.offsetHeight -2 -h -spaceHeight + 'px';
+		oWrap.appendChild(oTopline);
+		oWrap.appendChild(oBottomline);
+
+	}
+	addline();
 	//开启定时器之前一定要先关闭，消除定时器的影响
 	clearInterval(BirdTimer);
 	//定时器开启
 	BirdTimer = setInterval(function(){
 		//使小鸟向下做加速运动，定义加速速度
 	   iSpeed += 1;
-	   oBird.style.top = oBird.offsetTop + iSpeed + 'px';
+	   //定义一个上下运动距离
+	   var t = oBird.offsetTop + iSpeed;
+	   if(t<0){
+		   t = 0;
+		   die();
+	   }else if(t > oWrap.offsetHeight -2 -oBird.offsetHeight){
+	   	  t = oWrap.offsetHeight -2 -oBird.offsetHeight;
+	   	  die();
+	   }
+	   // oBird.style.top = oBird.offsetTop + iSpeed + 'px';
+	   oBird.style.top = t + 'px';
 	},30);
+
+	function die(){
+		clearInterval(BirdTimer);
+	}
+	document.onkeydown = function(){
+		iSpeed -= 10;
+	}
 </script>
 </html>

@@ -67,8 +67,27 @@
 	//构造函数
 	function Tab(){
 		//1.罗列需要的属性
-		this.aBtn = document.querySelectorAll('#')
+		this.aBtn = document.querySelectorAll('#ul-onclick li');
+		this.aContent = document.querySelectorAll('#ul-active li');
 		//2.绑定事件
+		this.bindEvent();
+	}
+	Tab.prototype.bindEvent = function(){
+		var _this = this;
+		for(var i=0; i<this.aBtn.length; i++){
+			this.aBtn[i].index = i;
+			this.aBtn[i].onclick = function(){
+				_this.fnClick(this);
+			}
+		}
+	}
+	Tab.prototype.fnClick = function(oBtn){
+		for(var j=0; j<this.aBtn.length; j++){
+			this.aBtn[j].className = '';
+			this.aContent[j].style.display = 'none';
+		}
+		oBtn.className = 'active';
+		this.aContent[oBtn.index].style.display = 'block';
 	}
 	//调用函数
 	new Tab();
