@@ -9,6 +9,7 @@
 </body>
 <script>
 	var str = 'abc 123 rrr 4d55 1b c';
+	console.log(str);
 	var reg1 = /\d/g;
 	console.log("reg1:",str.replace(reg1,"*"));
 	var reg2 = /\d{3}/g;
@@ -21,5 +22,9 @@
 	console.log("reg5:",str.replace(reg5,"*"));
 	var reg6 = /\d?/g;
 	console.log("reg6:",str.replace(reg6,"*"));
+	var reg7 = /\d*/g;
+	console.log("reg7:",str.replace(reg7,"*"));
+	var reg8 = /[a-z]\.\d/g;
+	console.log("reg8:",str.replace(reg8,"*"));
 </script>
 </html>

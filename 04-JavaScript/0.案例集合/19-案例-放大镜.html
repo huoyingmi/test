@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例-放大镜.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			/*height: 600px;
+			background: #ccc;*/
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+		#bigBox{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 400px;
+			height: 400px;
+			border: 1px solid #ccc;
+		}
+		#bigBox img{
+			width: 100%;
+			height: 100%;
+		}
+		#bigBox #mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 230px;
+			height: 230px;
+			background: rgba(255,255,0,0.5);
+			display: none;
+			cursor: move;
+		}
+		#list{
+			position: absolute;
+			top: 405px;
+			left: 0;
+			width: 400px;
+		}
+		#list li{
+			float: left;
+			list-style: none;
+			width: 55px;
+			height: 55px;
+			margin-right: 10px;
+			opacity: 0.5;
+			cursor: pointer;
+		}
+		#list li img{
+			width: 100%;
+			height: 100%;
+		}
+		#list li.active{
+			opacity: 1;
+		}
+		#largeBox{
+			position: absolute;
+			top: 0;
+			left: 402px;
+			width: 500px;
+			height: 600px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+			display: none;
+		}
+		#largeBox img{
+			width: 800;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bigBox">
+			<img src="../img/bgbx1.jpg" alt="">
+			<span id="mask"></span>
+		</div>
+		<ul id="list">
+			<li class="active"><img src="../img/list1.jpg" alt=""></li>
+			<li><img src="../img/list2.jpg" alt=""></li>
+			<li><img src="../img/list3.jpg" alt=""></li>
+		</ul>
+		<div id="largeBox">
+			<img src="../img/lgbx1.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	//获取元素
+	var owrap = document.querySelector('#wrap');
+	var oSmallList = document.querySelectorAll('#list li');
+	var oBigimg = document.querySelector('#bigBox img');
+	var oLargeimg = document.querySelector('#largeBox img');
+	var oBigBox = document.querySelector('#bigBox');
+	var oMask = document.querySelector('#mask');
+	var oLargeBox = document.querySelector('#largeBox');
+	//遍历选中的li，并添加事件函数，
+	for(var i=0; i<oSmallList.length; i++){
+		oSmallList[i].index = i;		//使mouseover某一个li时，opacity变为1
+		oSmallList[i].onmouseover = function(){
+			//再遍历li，消除opacity为1带来的影响
+			for(var j=0; j<oSmallList.length; j++){
+				oSmallList[j].className = '';
+			}
+			oBigimg.src = "../img/bgbx"+(this.index+1)+".jpg"
+			this.className = 'active';
+		}
+	}
+	oBigBox.onmouseover = function(){
+		oLargeBox.style.display = 'block';
+		oMask.style.display = 'block';
+		oBigBox.onmousemove = function(ev){
+			console.log( oBigBox.offsetLeft);
+			var l = ev.clientX - owrap.offsetLeft - oMask.offsetWidth * 0.5;
+			var t = ev.clientY - owrap.offsetTop - oMask.offsetHeight * 0.5;
+			if(l < 0){
+				l = 0;
+			}else if(l >= oBigBox.offsetWidth - oMask.offsetWidth){
+				l = oBigBox.offsetWidth - oMask.offsetWidth; 
+			}
+			if(t < 0){
+				t = 0;
+			}else if(t >= oBigBox.offsetHeight - oMask.offsetHeight){
+				t = oBigBox.offsetHeight - oMask.offsetHeight; 
+			}
+			oMask.style.left = l +'px';
+			oMask.style.top = t +'px';
+
+			var percentX = l / (oBigBox.offsetWidth - oMask.offsetWidth);
+			var percentY = t / (oBigBox.offsetHeight - oMask.offsetHeight);
+			// console.log(percentX);
+			// console.log(percentY);
+
+			oLargeimg.style.left = percentX * (oLargeBox.offsetWidth - oLargeimg.offsetWidth) + 'px';
+			oLargeimg.style.top = percentY * (oLargeBox.offsetHeight - oLargeimg.offsetHeight) + 'px';
+		}
+		oBigBox.onmouseout = function(){
+			oMask.style.display = 'none';
+			oLargeBox.style.display = 'none';
+		}
+	}
+</script>
