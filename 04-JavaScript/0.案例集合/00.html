@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="http://taobao.com">
+		用户名：
+		<input type="text" id="txt">
+		<div id="box1"></div>
+		密码：
+		<input type="password" id="pas">
+		<div id="box2"></div>
+	</form>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oPas = document.getElementById('pas');
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+
+    var reg1 = /^[a-z_]\w{2,7}$/ig;
+    var reg2 = /^[a-z][a-z0-9]{7,10}$/ig;
+    
+    oTxt.oninput = function(){
+        var oTxtValue = oTxt.value;
+		if(reg1.test(oTxtValue)){
+			oBox1.innerHTML = true;
+		}else{
+			oBox1.innerHTML = false;
+		}
+    }
+    oPas.oninput = function(){
+		var oPasValue = oPas.value;
+		if(reg2.test(oPasValue)){
+			oBox2.innerHTML = true;
+		}else{
+			oBox2.innerHTML = false;
+		}
+    }
+</script>
+</html>
