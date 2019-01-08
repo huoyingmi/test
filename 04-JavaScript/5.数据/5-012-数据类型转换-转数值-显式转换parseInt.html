@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5-012-数据类型转换-转数值-显式转换parseInt.html</title>
+</head>
+<body>
+	求和案例<br>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="button" id="btn" value="求和">
+</body>
+<script>
+	// 1.获取元素
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn');
+	//绑定事件
+	/*
+	oBtn.onclick = function(){
+		// alert('a');
+		var value1 = oTxt1.value;
+		var value2 = oTxt2.value;
+		alert(typeof value1);
+		alert(typeof value2);
+		//通过上面两个获取到输入的内容是字符串类型，要转换成数字类型
+		alert(value1 + value2);
+	}
+	*/
+	/*
+	oBtn.onclick = function(){
+		var value1 = parseInt(oTxt1.value);
+		var value2 = parseInt(oTxt2.value);
+		alert(typeof value1);
+		alert(typeof value2);
+		alert(value1 + value2);
+		//但是此时输入的字母内容也会显示成number类型，并且结果是NaN，要进行判断
+	}
+	*/
+	oBtn.onclick = function(){
+		var value1 = parseInt(oTxt1.value);
+		var value2 = parseInt(oTxt2.value);
+		if(isNaN(value1)){
+			alert('输入错误，请输入数字');
+		}else if(isNaN(value2)){
+			alert('输入错误，请输入数字');
+		}else{
+			alert(value1 + value2);
+		}
+	}
+</script>
+</html>

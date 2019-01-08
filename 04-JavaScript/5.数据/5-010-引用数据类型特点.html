@@ -8,18 +8,19 @@
 	
 </body>
 <script>
-	var a = document;
-	console.log('a:',typeof a);
-	var b = {
+	var e = {
 		name:'tom',
 		age:18
 	}
-	console.log('b:',typeof b);
-	var c = {}
-	console.log('c:',typeof c);
-	var d = null;
-	console.log('d:',typeof d);
-	var arr = [1,2,3,4];
-	console.log('arr:',typeof arr);
+	console.log(e);
+
+	e.fav = 'background';
+	console.log(e);
+
+	var f = e;
+	console.log(f);
+	f.fav2 = 'backgroundColor';
+	console.log(e);
+	console.log(f);
 </script>
 </html>

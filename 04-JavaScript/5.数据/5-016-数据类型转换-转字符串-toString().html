@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5-016-数据类型转换-转字符串-toString().html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//数字转字符串
+	var a = 12;
+	console.log(typeof a);
+	console.log(typeof a.toString());
+	//boolean布尔转字符串
+	var b = true;
+	console.log(typeof b);
+	console.log(typeof b.toString());
+/*
+	//null 会报错
+	var c = null;
+	console.log(typeof c);
+	console.log(typeof c.toString());
+	//undefined  会报错
+	var d = undefined;
+	console.log(typeof d);
+	console.log(typeof d.toString());
+*/
+	//数值类型的toString()，可以携带一个参数，输出对应进制的值
+	var e = 15;
+	var f = e.toString(16);
+	var g = e.toString(2);
+	var h = e.toString(8);
+	console.log(e);
+	console.log(f);
+	console.log(g);
+	console.log(h);
+
+</script>
+</html>

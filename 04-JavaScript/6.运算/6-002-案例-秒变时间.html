@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6-002-案例-秒变时间.html</title>
+	<script>
+		//将3750秒变成00时00分00秒
+		var Second = 3750;
+		//计算小时
+		var iHour = parseInt(Second / 3600);
+		console.log(iHour);
+		//计算分钟
+		var iMinute = parseInt((Second%3600)/60);
+		console.log(iMinute);
+		//剩下的秒数
+		var iSecond = (Second%3600)%60;
+		console.log(iSecond);
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
