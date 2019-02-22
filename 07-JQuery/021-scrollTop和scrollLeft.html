@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-scrollTop和scrollLeft.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow: auto;
+		}
+		.son{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<button>点击</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button')[0].click(function(){
+            console.log($('.father').scrollTop());
+            console.log($('.father').scrollLeft());
+		})
+	})
+
+</script>
+</html>

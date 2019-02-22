@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-jQuery操作位置.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			position: relative;
+			margin: 100px auto;
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		.son{
+			position: absolute;
+			top: 100px;
+			left: -50px;
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('.son').offset());
+		console.log($('.son').offset({
+			top:"100px",
+			left:"20px",
+		}));
+		console.log($('.son').position());
+		console.log($('.son').scrollTop(50));
+		console.log($('.son').scrollLeft(50));
+	})
+</script>
+</html>
