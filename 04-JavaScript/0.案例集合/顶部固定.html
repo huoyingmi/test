@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>顶部固定.html</title>
+	<style>
+		.box{
+			height: 95px;
+			background: #fff;
+			/*border-bottom: 1px solid #333;*/
+			box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+		}
+	    .ul2{
+			float: left;
+			height: 95px;
+			line-height: 95px;
+		}
+	    .ul2 li{
+			float: left;
+			/*height: 25px;*/
+			margin-right: 40px;
+			/*margin-top: 35px;*/
+		}
+	    .ul2 li a{
+			height: 25px;
+			font-size: 16px;
+			color: #4f4f4f;
+		}
+	    .ul2 li:nth-child(1),
+	    .ul2 li:nth-child(2){
+			color: #333;
+			font-weight: bolder;
+		}
+	    .ul2 li:hover a{
+			color: #3965d5;
+		}
+		#nav{
+			position: fixed;
+			top: 0;
+			left: 0;
+			/*height: 100px;*/
+			height: 0px;
+			width: 100%;
+			background: #f00;
+		}
+		.main{
+			width: 100%;
+			height: 3000px;
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="ul2">
+			<li class="nav-li-item"><a href="#">首页</a></li>
+			<li class="nav-li-item"><a href="#">手机</a></li>
+			<li class="nav-li-item"><a href="#">“足迹”系列</a></li>
+			<li class="nav-li-item"><a href="#">官方配件</a></li>
+			<li class="nav-li-item"><a href="#">畅呼吸系列</a></li>
+			<li class="nav-li-item"><a href="#">箱包类</a></li>
+			<li class="nav-li-item"><a href="#">品牌周边</a></li>
+			<li class="nav-li-item"><a href="#">智能音箱</a></li>
+			<li class="nav-li-item"><a href="#">服务</a></li>
+			<li class="nav-li-item"><a href="#">企业团购</a></li>
+		</ul>
+	</div>
+	<div id="nav"></div>
+	<div class="main"></div>
+</body>
+<script src="until.js"></script>
+<script>
+	var oNav = document.getElementById('nav');
+	console.log(oNav);
+	var isShow = false;
+	window.onscroll = function(){
+		// alert('aa');
+		// console.log(getScrollTop());
+		if(getScrollTop() >= 100){
+			if(!isShow){
+				console.log('aa');
+				animate(oNav,{height:100},true);
+				isShow = true;
+			}
+		}else if(getScrollTop() < 100){
+			if(isShow){
+				console.log('bb');
+				animate(oNav,{height:0},true);
+				isShow = false;
+			}
+		}
+	}
+</script>
+</html>
