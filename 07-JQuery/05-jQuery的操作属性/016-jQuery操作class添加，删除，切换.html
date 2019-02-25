@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-jQuery操作class添加，删除，切换.html</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<button>点击</button>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// 添加
+		console.log($('div').addClass("box"));
+		console.log($('div').eq(3).addClass("box1"));
+		console.log($('div').eq(1).addClass("div1"));
+		console.log($('div').eq(4).addClass("div1"));
+		console.log($('div').eq(2).addClass("div1"));
+		// 删除
+		console.log($('div').eq(3).removeClass("box"));
+		console.log($('div').eq(1).removeClass("div1"));
+		// 切换
+		$('button').click(function(){
+			console.log($('div').toggleClass("box1"));
+			console.log($('div').toggleClass("div1"));
+		})
+	})
+</script>
+</html>

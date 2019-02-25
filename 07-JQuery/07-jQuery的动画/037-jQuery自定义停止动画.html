@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>037-jQuery自定义停止动画.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: #f60;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button>开始动画</button>
+	<button>停止动画</button>
+	<div></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").eq(0).on("click",function(){
+			
+			$('div').animate({width:"300px"},2000,function(){
+				console.log("animate 1");
+			})
+			$('div').animate({height:"300px"},2000,function(){
+				console.log("animate 2");
+			})
+			$('div').animate({opacity:0.5},2000,function(){
+				console.log("animate 3");
+			})
+			
+		});
+		$('button').eq(1).on("click",function(){
+			// $('div').stop();
+			// $('div').stop(false,false);
+			// $('div').stop(true,false);
+			// $('div').stop(true,true);
+			$('div').stop(false,true);
+		})
+
+	})
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>040-jQuery操作DOM添加节点.html</title>
+</head>
+<body>
+	<button>插入1</button>
+	<button>插入2</button>
+	<button>插入3</button>
+	<button>插入4</button>
+	<button>插入5</button>
+	<button>插入6</button>
+	<ul>
+		<li>li1</li>
+		<li>li1</li>
+		<li>li1</li>
+		<li>li1</li>
+		<li>li1</li>
+	</ul>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// 将子节点插入到父节点内部后面
+		$('button').eq(0).on("click",function(){
+			var $li = $("<li>我是插入的li1</li>");
+			$('ul').append($li);
+		});
+		$('button').eq(1).on("click",function(){
+			var $li = $("<li>我是插入的li2</li>");
+			$li.appendTo($('ul'));
+		});
+		// 将子节点插入到父节点内部前面
+		$('button').eq(2).on("click",function(){
+			var $li = $("<li>我是插入的li3</li>");
+			$('ul').prepend($li);
+		});
+		$('button').eq(3).on("click",function(){
+			var $li = $("<li>我是插入的li4</li>");
+			$li.prependTo($('ul'));
+		});
+		// 外部插入
+		$('button').eq(4).on("click",function(){
+			var $p = $("<p>我是插入的p1</p>");
+            $('ul').after($p);
+		});
+		$('button').eq(5).on("click",function(){
+			var $p = $("<p>我是插入的p2</p>");
+            $('ul').before($p);
+		});
+	})
+</script>
+</html>

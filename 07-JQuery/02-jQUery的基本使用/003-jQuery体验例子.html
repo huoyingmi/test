@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-jQuery体验例子.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	 //js做法
+	 /*
+	 var oBtn = document.getElementsByTagName('button')[0];
+	 var aDiv = document.getElementsByTagName('div');
+	 oBtn.onclick = function(){
+	 	for(var i=0; i<aDiv.length; i++){
+	 		aDiv[i].style.background = 'red';
+	 	}
+	 }
+	 */
+	 $(function(){
+	 	$('button').click(function(){
+	 		$('div').css({
+	 			background:'red'
+	 		})
+	 	})
+	 })
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-触发-是否阻止默认行为.html</title>
+</head>
+<body>
+	<a href="http://taobao.com">
+		<!-- 去购物 -->
+       <span>span</span>
+	</a>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	 // trigger默认行为的事件触发
+     // 默认行为的事件触发
+	$(function(){
+		$('span').on("click",function(ev){
+			alert('click a');
+			$('span').trigger('click');
+	   	   // $('a').triggerHandler('click');
+		})
+	})
+</script>
+</html>
