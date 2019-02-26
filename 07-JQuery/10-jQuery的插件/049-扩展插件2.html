@@ -19,20 +19,22 @@
 </body>
 <script>
 	;(function(){
-		$.prototype.setColor = function(options){
-			var res = this.each(function(index,element){
-                this.style.color = 'red';
-			})
-			console.log(res);
-			return res;
-		}
+		$$.fn.extend({
+			setColor:function(options){
+				var DEFAULTS = {color:'red'}
+				var options = $.extend({},DEFAULTS,options);
+				return this.each(function(){
+					this.style.color = options.color;
+				});							
+			}
+		})
 	})(jQuery);
 </script>
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
 		$('button').on("click",function(){
-			$('div').setColor().css({width:300});
+			$('div').setColor(color:"red").css({width:300});
 		})
 	})
 </script>

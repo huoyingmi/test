@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>053-原理分析-extend测试.html</title>
+</head>
+<body>
+	<div></div>
+</body>
+<script src="kquery-1.js"></script>
+<script>
+	$.fn.extend({
+		test1:function(){
+			console.log('test1');
+		}
+	})
+</script>
+<script>
+	$(function(){
+		$('div').test1();
+	})
+</script>
+</html>
