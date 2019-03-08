@@ -34,9 +34,10 @@
 			alert('click 1');
 		})
 		$('div').click(fn);
+		
 		$('div').mouseover(function(){
 			$('div').css({
-				background:"red"
+				background:"#f00"
 			})
 		})
 		$('div').mouseout(function(){
@@ -45,21 +46,34 @@
 			})
 		})
         */
-        
+        /*
 		 $('div').on("click",function(){
         	alert('click 2');
         })
 		 $('div').on("click",fn);
 		 $('div').on("mouseover",function(){
-		 	alert('red');
+		 	$('div').css({
+				background:"#f00"
+			})
 		 })
-        
+		 $('div').on("mouseout",function(){
+		 	$('div').css({
+				background:"#fff"
+			})
+		 })
+        */
         /*
         $('div').one("click",function(){
         	alert('click 3');
         })
 		 $('div').one("click",fn);
         */
+        $('div').hover(
+    	function(){
+            alert("aaa");
+        },function(){
+            alert("bbb");
+        })
 	})
 </script>
 </html>

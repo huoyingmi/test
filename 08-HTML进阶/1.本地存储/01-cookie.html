@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-cookie.html</title>
+</head>
+<body>
+	<h1>cookie test</h1>
+</body>
+<script>
+	/*
+	document.cookie = "username=leo";
+	document.cookie = "age=18";
+	console.log(document.cookie);
+	*/
+	
+	var oDate = new Date();
+	oDate.setDate(oDate.getDate()+14);
+	document.cookie = "name=tom;expires="+oDate;
+
+	// document.cookie = "name=tom;Max-Age=10";
+	
+	/*
+	function setCookie(key,val,iDate){
+		var oDate = new Date();
+		oDate.setDate(oDate.getDate()+iDate);
+		document.cookie = key +"=" +val +';expires='+oDate;
+	}
+	setCookie('username','tom',3);
+	setCookie('age','18',3);
+
+	function getCookie(key){
+		var str = document.cookie;
+		console.log(str);
+		var arr1 = str.split(';');
+		console.log(arr1);
+		var res = '';
+		for(var i=0; i<arr1.length; i++){
+			var arr2 = arr1[i].split('=');
+			console.log(arr2);
+			if(key.trim() == arr2[0].trim()){
+				res = arr2[i];
+				break;
+			}
+		}
+		return res;
+	}
+	console.log(getCookie('age'));
+
+	function removeCookie(key){
+		setCookie(key,false,-1);
+	}
+	console.log(removeCookie("age"));
+	*/
+</script>
+</html>

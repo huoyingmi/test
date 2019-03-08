@@ -23,6 +23,7 @@
 <body>
 	<div class="box1"></div>
 	<div class="box2"></div>
+	<div class="box2"></div>
 	<div class="box3"></div>
 	<div class="box4"></div>
 	<div class="box5"></div>
@@ -33,6 +34,7 @@
 	$(function(){
         console.log($('div').css("width"));
         console.log($('div').css("height"));
+        console.log($('div').hasClass("box2"));
         $('button').click(function(){
         	/*
             $('div').css("width","300px");
@@ -45,10 +47,13 @@
 	        $('div').eq(0).css("height","400px");
 	        */
 	        // $('div').css("height","300px").css("width","200px");
+	        /*
 	        $('div').css({
 	        	height:"300px",
 	        	width:"200px"
 	        });
+	        */
+
         })
 	})
 </script>

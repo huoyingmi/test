@@ -11,51 +11,42 @@
 		div{
 			width: 100px;
 			height: 100px;
-			border: 1px solid #000;
+			border: 10px solid #ccc;
 			margin-top: 10px;
 		}
 	</style>
 </head>
 <body>
 	<div>1</div>
-	<div>2</div>
-	<div>3</div>
-	<div>4</div>
-	<div>5</div>
+	
 </body>
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
-		function fn(){
-			alert('click fn');
-		}
-		/*
-		$('div').click(function(){
-			alert('click 1');
-		})
-		$('div').click(fn);
-		$('div').mouseover(function(){
-			$('div').css({
-				background:"red"
-			})
-		})
-		$('div').mouseout(function(){
-			$('div').css({
-				background:"#fff"
-			})
-		})
-        */
+		function f1(){
+			$('div').css("width","300px");
+		};
+		function f2(){
+			$('div').css("width","100px");
+		};
         // 绑定
-        $('div').on("click",function(){
-        	alert('click 2');
-        })
-		$('div').on("click",fn);
+
 		$('div').on("mouseover",function(){
-		 	alert('red');
+			f1();
+		 	$('div').css({
+		 		background:"#f00"
+		 	});
+		});
+		$('div').on("mouseout",function(){
+			f2();
+		 	$('div').css({
+		 		background:"#fff"
+		 	});
 		})
         //移除
 		// $('div').off();
-		$('div').off("click");
+		// $('div').off("mouseout");
+		$('div').off("mouseover",f1);
 	})
 </script>
 </html>

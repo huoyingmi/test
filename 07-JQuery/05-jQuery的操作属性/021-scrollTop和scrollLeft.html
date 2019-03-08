@@ -17,6 +17,7 @@
 		.son{
 			width: 3000px;
 			height: 3000px;
+			/*background: #f00;*/
 		}
 	</style>
 </head>
@@ -29,10 +30,16 @@
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
-		$('button')[0].click(function(){
-            console.log($('.father').scrollTop());
-            console.log($('.father').scrollLeft());
-		})
+		// console.log($('.father').scrollTop());
+		// console.log($('.father').scrollLeft());
+		var oBtn = $('button')[0];
+		oBtn.onclick = function(){
+			console.log($('.father').scrollTop());
+			console.log($('.father').scrollLeft());
+
+			console.log($('.father').scrollTop(444));
+			console.log($('.father').scrollLeft(555));
+		}
 	})
 
 </script>

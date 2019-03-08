@@ -18,22 +18,25 @@
 	<div>div2</div>
 </body>
 <script>
-	;(function(){
-		$.prototype.setColor = function(options){
-			var res = this.each(function(index,element){
+	;(function($){
+        $.prototype.setColor = function(){
+        	console.log(this);
+            var ret = this.each(function(index,elem){
                 this.style.color = 'red';
-			})
-			console.log(res);
-			return res;
-		}
+            });
+            console.log(ret);
+            return ret;
+        }
 	})(jQuery);
 </script>
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
 		$('button').on("click",function(){
-			$('div').setColor().css({width:300});
-		})
+			// console.log($('div'));
+			// $('div').css({width:300});
+			$('div').setColor().animate({width:300});
+		});
 	})
 </script>
 </html>

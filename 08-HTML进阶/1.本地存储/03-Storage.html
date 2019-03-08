@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-Storage.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// console.log(localStorage);
+	// console.log(sessionStorage);
+
+   // setItem(key,value) 设置
+   localStorage.setItem('username','tom');
+   localStorage.setItem('age','18');
+   localStorage.setItem('xx','aa');
+	// getItem(key) 获取
+	console.log(localStorage.getItem('username'));
+	console.log(localStorage.getItem('age'));
+	console.log(localStorage.getItem('xx'));
+    // removeItem(key) 删除
+    localStorage.removeItem('username');
+    // clear() 清除所有
+    localStorage.clear();
+    // length 内容个数
+    // key(num) 获取key的值
+</script>
+</html>

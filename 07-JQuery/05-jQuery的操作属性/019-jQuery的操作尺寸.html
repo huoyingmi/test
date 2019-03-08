@@ -32,14 +32,16 @@
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
-		$('div').width();
-		$('div').height();
+		console.log("width::",$('div').width());
+		// console.log("width::",$('div').width(150));
+		console.log('height::',$('div').height());
+		// console.log('height::',$('div').height(200));
 
-		$('div').innerWidth(150);
-		$('div').innerHeight(150);
+		console.log("innerWidth::",$('div').innerWidth());
+		console.log("innerHeight::",$('div').innerHeight());
 
-		$('div').outerWidth(250);
-		$('div').outerHeight(250);
+		console.log("outerWidth::",$('div').outerWidth());
+		console.log("outerHeight::",$('div').outerHeight());
 	})
 </script>
 </html>

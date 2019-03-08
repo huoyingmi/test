@@ -14,13 +14,14 @@
 </body>
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
-	$(function(){
-		console.log($('div').html());
-		// console.log($('div').html("<h1>我是大标题</h1>"));
-		console.log($('div').text());
-		// console.log($('div').text("我是内容div"));
-		console.log($('input').val());
-		console.log($('input').val("bbb"));
-	})
+ $(function(){
+	// console.log("html1::",$('div').html());
+	// console.log("html2::",$('div').html("<h1>我是大标题</h1>"));
+	// console.log("text1::",$('div').text());
+	// console.log("text2::",$('div').text("我是内容div"));
+	console.log("text3::",$('div').text("<h1>我是大标题</h1>"));
+	// console.log("val1::",$('input').val());
+	// console.log("val2::",$('input').val("bbb"));
+ })
 </script>
 </html>
