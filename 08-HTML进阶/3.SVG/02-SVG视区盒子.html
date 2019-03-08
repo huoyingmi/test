@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-SVG视区盒子.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.svg1{
+			background: #ccc;
+		}
+		.svg2{
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<svg class="svg1" width="600" height="400" viewBox="0 0 60 40">
+		<rect width="30" height="10"/>
+	</svg>
+	<svg class="svg2" width="500" height="400" viewBox="0 0 60 40">
+		<rect width="30" height="20"/>
+	</svg>
+	<svg class="svg2" width="300" height="300" viewBox="0 0 20 30">
+		<rect width="30" height="20"/>
+	</svg>
+</body>
+</html>
