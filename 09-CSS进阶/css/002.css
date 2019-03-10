@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*我是注释二 编译被保留，就是会翻译到css中*/
+div {
+  margin-top: 10px;
+}
+.box1 {
+  color: #ff0000;
+  width: 300px;
+  height: 200px;
+  background: #ccc;
+}
+.box2 {
+  width: 100px;
+  color: #ffaaaa;
+  background: gray;
+}
+.box3 {
+  color: #ff0000;
+  width: 300px;
+  height: 200px;
+  background: #ccc;
+  width: 100px;
+  color: #ffaaaa;
+  background: gray;
+  -webkit-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+  border-radius: 10%;
+  line-height: 200px;
+}
