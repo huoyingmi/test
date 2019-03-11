@@ -24,12 +24,19 @@ div{
 	background: #ccc;
 }
 .box2{
-	width: 100px;
+	width: 300px;
 	color: @color1;
 	background: gray;
 }
-// 2.带参数
+// 2.带参数没有默认值
 .border-radius(@r){
+	-webkit-border-radius:@r;
+	-ms-border-radius:@r;
+	-o-border-radius:@r;
+	border-radius: @r;
+}
+// 3.带参数有默认值
+.border-radius-de(@r:10px){
 	-webkit-border-radius:@r;
 	-ms-border-radius:@r;
 	-o-border-radius:@r;
@@ -39,6 +46,9 @@ div{
 .box3{
 	.box1;
 	.box2;
-	.border-radius(10%);
+	// .border-radius(20px);
+	// .border-radius-de;
+	.border-radius-de(40px);
 	line-height:@line-height;
 }
+

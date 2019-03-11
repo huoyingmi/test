@@ -13,21 +13,20 @@ div {
   background: #ccc;
 }
 .box2 {
-  width: 100px;
+  width: 300px;
   color: #ffaaaa;
   background: gray;
 }
 .box3 {
   color: #ff0000;
-  width: 300px;
   height: 200px;
   background: #ccc;
-  width: 100px;
+  width: 300px;
   color: #ffaaaa;
   background: gray;
-  -webkit-border-radius: 10%;
-  -ms-border-radius: 10%;
-  -o-border-radius: 10%;
-  border-radius: 10%;
+  -webkit-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  border-radius: 40px;
   line-height: 200px;
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-弹性布局-项目水平对齐.html</title>
+	<style>
+		.father{
+			width: 1000px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 50px 100px;
+			display: flex; 
+			/*决定项目的水平对齐方式*/
+			/*(默认值):左对齐*/
+			/*justify-content:flex-start;  */
+			 /*右对齐*/
+			/*justify-content:flex-end;   */
+			/*居中*/ 
+			/*justify-content:center;        */
+			/*两端对齐,项目之间的间隔都相等。*/
+			/*justify-content:space-between; */
+			/*每个项目两侧的间隔相等。所以,项目之间的间隔比项目与边框的间隔大一倍。*/
+			justify-content:space-around;    
+		} 
+		.son{
+			height: 100px;
+		}
+		.son1{
+			width: 100px;
+			background: #f00;
+		}
+		.son2{
+			width: 200px;
+			background: #faa;
+		}
+		.son3{
+			width: 300px;
+			background: #f60;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">son1</div>
+		<div class="son son2">son2</div>
+		<div class="son son3">son3</div>
+	</div>
+</body>
+</html>
