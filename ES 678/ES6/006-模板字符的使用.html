@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-模板字符的使用.html</title>
+</head>
+<body>
+	<button>点击</button>
+</body>
+<script>
+	let oBtn = document.getElementsByTagName('button')[0];
+	console.log(oBtn);
+	var name = "Tom";
+	/*
+	oBtn.onclick = function(){
+		var html = "<ul>";
+		html +=   '<li>'+name+'</li>';
+		html +=   '<li>'+name+'</li>';
+		html +=   '<li>'+name+'</li>';
+		html +=   '<li>'+name+'</li>';
+		html += '</ul>';
+		document.body.innerHTML = html;
+	}
+	*/
+	oBtn.onclick = function(){
+		var html = `<ul>
+		                <li>${name}</li>
+		                <li>${name}</li>
+		                <li>${name}</li>
+		                <li>${name}</li>
+		</ul>`;
+		document.body.innerHTML = html;
+	}
+</script>
+</html>

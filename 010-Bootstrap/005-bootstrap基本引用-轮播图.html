@@ -5,6 +5,20 @@
 	<title>005-bootstrap基本引用-轮播图.html</title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.carousel{
+			width: 600px;
+			height: 400px;
+		}
+		#carousel-example-generic img{
+			width:600px;
+			height: 400px;
+		}
+	</style>
 </head>
 <body>
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -13,6 +27,7 @@
 		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
 		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
 		  </ol>
 
 		  <!-- Wrapper for slides -->
@@ -28,16 +43,16 @@
 		      <div class="carousel-caption">
 		      </div>
 		    </div>
-		    <div class="item active">
+		    <div class="item">
 		      <img src="img/ad3.jpg" alt="...">
 		      <div class="carousel-caption">
 		      </div>
 		    </div>
-		    <div class="item active">
-		      <img src="img/ad4.jpg" alt="...">
-		      <div class="carousel-caption">
-		      </div>
-		    </div>
+		    <div class="item">
+			  <img src="img/ad4.jpg" alt="...">
+			  <div class="carousel-caption">
+			  </div>
+			</div>
 		  </div>
 
 		  <!-- Controls -->
@@ -50,6 +65,7 @@
 		    <span class="sr-only">Next</span>
 		  </a>
 		</div>
+
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-let定义变量.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	// let定义过的变量不能再定义,var定义过的变量可以重新定义
+	var a = 1;
+	var a = 2;
+	console.log("a::",a);
+
+	let b = 1;
+	let b = 2;
+	console.log("b::",b);//Uncaught SyntaxError: Identifier 'b' has already been declared
+	*/
+	/*
+	// let定义的变量不会声明提升,var定义的变量会发生声明提升 
+	console.log("a::",a);
+	var a = 1;
+
+	console.log("b::",b);//Uncaught ReferenceError: b is not defined
+	let b = 1;
+	*/
+	/*
+	// let定义的变量在let命令所在的代码块内有效,var定义的变量在函数范围内有效
+	if(true){
+		var a = 1;
+		console.log("a1::",a);
+	}
+	console.log("a2::",a);
+
+	if(true){
+		let b = 1;
+		console.log("b1::",b);
+	}
+	console.log("b2::",b);//Uncaught ReferenceError: b is not defined
+	*/
+    /*
+    // 声明变量时，先找a，不能找到时就是声明，能找到就是赋值
+	function f1(){
+		var a = 1;  //声明变量a,局部
+		function f2(){
+			a = 2;  //能找到，是赋值
+			console.log("f2 a1 =::",a);
+		}
+		console.log("f1 a1 =::",a);
+		f2();
+		console.log("f2 a2 =::",a);
+	}
+	f1();
+
+	function f11(){
+		let b = 1;
+		function f22(){
+			b = 2;
+			console.log("f22 b1 =::",b);
+		}
+		console.log("f11 b1 =::",b);
+		f22();
+		console.log("f22 b2 =::",b);
+	}
+	f11();
+    */
+	function f1(){
+		c = 1;  //全局变量
+		function f2(){
+			var c = 2;
+			console.log("f2 c11 =::",c);
+		}
+		console.log("f1 c11 =::",c);
+		f2();
+		console.log("f2 c22 =::",c);
+	}
+	f1();
+    console.log("f1 c22 =::",c);
+</script>
+</html>
