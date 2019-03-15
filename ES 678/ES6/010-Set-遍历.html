@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-Set-遍历.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s = new Set([11,22,33,23,43,44,12,14]);
+	console.log(s);
+	// keys():返回键名的遍历器
+	/*
+	for(let key of s.keys()){
+		console.log(key);
+	}
+	
+    //values():返回键值的遍历器
+	for(let value of s.values()){
+		console.log(value);
+	}
+	for(let value of s.values()){
+		console.log(value);
+	}
+	
+	//entries():返回键名、键值对的遍历器
+	for(let entry of s.entries()){
+		console.log(entry);  //value key
+	}
+	*/
+	// forEach(function(value,key){}):使用回调函数遍历
+	s.forEach(function(value,index){
+		console.log(value,index);
+	})
+</script>
+</html>

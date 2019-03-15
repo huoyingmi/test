@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-Map的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+	let obj = {
+		name:"Tom",
+		age:20
+	}
+	console.log(obj);
+	/*
+  	//ES5的做法
+	obj.ad = "xuchang";
+	console.log(obj);
+
+	let obj1 = {id:100};
+	let obj2 = {id:101};
+	obj[obj1] = "Teacher";
+	obj[obj2] = "Student";
+	console.log(obj);
+	for(let key in obj){
+		console.log(key,typeof key);
+	}
+	*/
+
+	// ES6的做法
+     let map = new Map();
+     console.log("map of::",map);
+     console.log("map.size of::",map.size);
+     //想map添加属性和值
+     map.set("age",20);
+     console.log(map);
+
+</script>
+</html>
