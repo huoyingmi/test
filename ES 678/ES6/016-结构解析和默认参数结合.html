@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-结构解析和默认参数结合.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//对象是结构解析  =get和=hello是默认参数
+	function show(url,{method="get",body="hello"}={}){
+		console.log(url,method,body);
+	}
+
+	show("http://www.taobao.com",{method:"post",body:"good"});
+	show("http://www.taobao.com",{method:"post"});
+</script>
+</html>

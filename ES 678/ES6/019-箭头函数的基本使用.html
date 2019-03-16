@@ -7,5 +7,65 @@
 <body>
 	
 </body>
+<script>
+    /*
+	console.log("2::",sum(2,3));
 
+	function sum(x,y){
+		return x+y;
+	}
+	console.log("1::",sum(2,3));
+	*/
+	/*
+	//console.log("4::",sum(2,3)); //Uncaught TypeError: sum is not a function
+	var sum = function(x,y){
+        return x+y;
+	}
+	console.log("3::",sum(2,3));
+	*/
+	/*
+	//console.log("6::",sum(2,3)); //Uncaught ReferenceError: sum is not defined
+	let sum = function(x,y){
+        return x+y;
+	}
+	console.log("5::",sum(2,3))
+	*/
+	//箭头函数的用法  将function换成=>
+	/*
+	let sum = (x,y)=>{
+        return x+y;
+	}
+	console.log("7::",sum(2,3))
+	console.log(typeof sum);
+	*/
+	//将{}去除，直接写运行的函数
+	/*
+	let sum = (x,y)=>x+y;
+	console.log("8::",sum(2,3))
+	console.log(typeof sum);
+	*/
+	/*
+	let sum = (x)=>x+20;
+	console.log("9::",sum(2))
+	console.log(typeof sum);
+	*/
+	//数组排序
+	let arr1 = [11,4,57,80,72,33,3,7,100,0];
+	console.log("arr1::",arr1);
+    
+	let arr2 = arr1.sort();
+	console.log("arr2",arr2);
+
+	let arr3 = arr1.sort(function(n1,n2){
+		return n1-n2;
+	});
+	console.log("arr3::",arr3);
+
+	//箭头函数应用排序
+	let arr4 = arr1.sort((n1,n2) => {return n1-n2});
+	console.log("arr4::",arr4);
+
+	let arr5 = arr1.sort((n1,n2) => n1-n2);
+	console.log("arr5::",arr5);
+</script>
 </html>
