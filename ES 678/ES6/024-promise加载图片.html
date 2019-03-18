@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -8,8 +8,14 @@
 	
 </body>
 <script>
-	let promise = new Promise(()=>{
-		
-	})
+	var img = new Image();
+	img.onload = function(){
+		console.log('../../010-Bootstrap/img/1.jpg'+'loaded');
+	}
+	img.onerror = function(){
+		console.log('../../010-Bootstrap/img/2.jpg'+'loaded failed');
+	}
+
+	img.src = ''
 </script>
 </html>
