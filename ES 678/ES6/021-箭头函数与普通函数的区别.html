@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-箭头函数与普通函数的区别.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// 箭头函数没有原型对象,所以不能用箭头函数来定义构造函数
+	/*
+	普通函数
+	function person(){
+		console.log('hi');
+	}
+	let p1 = new person();
+	console.log(p1);
+	*/
+	/*
+	let person = ()=>{
+		console.log('hi');
+	}
+	console.log("person()::",person.prototype); 
+	let p2 = new person();   //Uncaught TypeError: person is not a constructor未捕获的类型错误：Person不是构造函数
+	console.log("p2::",p2);
+	*/
+
+	// 箭头函数中没有arguments
+	/*
+	show(11,22,33);  //函数声明的提升
+	function show(){
+		console.log(arguments);
+	}
+	show(11,22,33,44);
+	*/
+	/*
+	let hide = ()=>{
+		console.log(arguments);   //Uncaught ReferenceError:  arguments is not defined
+	}
+	hide(11,22,33,44);
+	*/
+
+	
+</script>
+</html>

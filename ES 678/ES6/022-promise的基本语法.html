@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022-promise的基本语法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	let promise = new Promise();
+	console.log(promise);//Uncaught TypeError: Promise resolver undefined is not a function Promise Resolver Undefined不是函数
+	*/
+	/*
+	let promise = new Promise(()=>{
+
+	})
+	console.log(promise); //pending"状态进行中
+	*/
+
+	let promise = new Promise((resolve,reject)=>{
+		// resolve();
+		reject('hello');
+
+		// reject();
+		// reject('出错了');
+	})
+	console.log(promise); 
+</script>
+</html>
