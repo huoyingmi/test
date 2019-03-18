@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>043-字面量对象简洁语法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let name = "Tom",
+	 	age = "18";
+	/*
+	 let obj = {
+	 	name:name,
+	 	age:age
+	 }
+	 */
+	 /*
+	 let obj = {
+	 	name,
+	 	age
+	 }
+	 */
+	 let obj = {
+	 	name,
+	 	age,
+	 	sayName:function(){
+	 		console.log(this,"I am "+this.name);
+	 		console.log(this.name);
+	 	},
+	 	sayAge(){
+			console.log(this,"I am "+this.age+" years old");
+			console.log(this.age);
+		}
+	 }
+
+	 console.log(obj);
+	 obj.sayName();
+	 obj.sayAge();
+</script>
+</html>

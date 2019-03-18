@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>041-对象-class定义类.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//构造函数
+	class Person{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		sayName(){
+			console.log("I am "+this.name);
+		}
+		sayAge(){
+			console.log("I am "+this.age+" years old");
+		}
+		//静态方法的添加要用 static
+		static sayHi(){
+			console.log("Hi...");
+		}
+	}
+
+	//实例函数
+	let p = new Person("Tom",20);
+	console.log(p);  //对象
+	//调用
+	p.sayName();
+	p.sayAge();
+	Person.sayHi();
+</script>
+</html>
