@@ -8,15 +8,72 @@
 	
 </body>
 <script>
+	//keys可以拿到所有属性的键名，但不包括继承的
+
 	//关键词--属性名
-	let {keys} = Object;
+	let {
+		keys,
+		entries,
+		values,
+		getOwnPropertyDescriptors,
+		assign,
+		is
+	} = Object;
+	console.log("1::",keys); //1:: ƒ keys(){[native code]}方法
+	//原型上添加test方法
+	Object.prototype.test = 'test';
 	
 	let obj = {
 		name:"Tom",
 		age:"18"
 	}
 
-	console.log("obj::",obj);
-	console.log("keys(obj)::",keys(obj));
+	Object.defineProperty(obj,"cuntry",{
+		value:"China",
+		// enumerable:false  //不可被枚举
+		enumerable:true   //可以被枚举
+	})  
+
+	console.log("原型上的方法::",test);
+	console.log("obj::",obj); //对象全部
+	console.log("keys(obj)::",keys(obj)); //返回键名的数组，不包括继承
+	console.log("values(obj)::",values(obj)); //返回键值的数组，不包括继承
+	console.log("entries(obj)::",entries(obj)); 
+	//返回键名,键值对的数组，不包括继承
+	console.log("getOwnPropertyDescriptors(obj)::",getOwnPropertyDescriptors(obj)); //返回指定对象所有属性名的对象{name: {…}, age: {…}, cuntry: {…}}，不包括继承
+
+
+
+	// 方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。
+	let DEFAULTS = {
+		js:true,
+		interval:200
+	}
+
+	let options = {
+		js:false,
+		name:"Tom"
+	}
+
+	let obj2 = assign({},DEFAULTS,options);
+	console.log(obj2);
+
+	// 也可以复制数组
+	let arr1 = assign([],[1,2,3,4])
+	let arr2 = assign([],[1,2,3,4],[11,22,33]) //属性名相同，后面覆盖前面的
+	console.log(arr1);
+	console.log(arr2);
+
+	//is相当于全等
+	console.log("1 == '1'::",1 == "1"); //true
+	console.log("1 === '1'::",1 === "1"); //false
+	console.log('is(1,"1"',is(1,"1")); //false
+	console.log('is(1,1)',is(1,1)); //true
+
+	console.log("+0 === -0",+0 === -0); //true
+	console.log('is(+0,-0)',is(+0,-0)); //false
+
+	console.log("NaN === NaN",NaN === NaN); //false
+	console.log("is(NaN,NaN)",is(NaN,NaN)); //true
 </script>
 </html>

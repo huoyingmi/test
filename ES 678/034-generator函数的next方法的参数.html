@@ -10,7 +10,7 @@
 <script>
 	function * gen(x){
 		console.log("x=",x); // 执行第一步打印：5
-		let y = yield (x+5); 
+		let y = yield (x+5);  //{value: 10, done: false}
 		console.log("y=",y); //undefined
 		let z = yield (y+10);
 		console.log("z=",z); //undefined
@@ -23,7 +23,7 @@
 	// 调用遍历器对象的next方法后，返回一个对象，包括value和done属性
 	console.log(g.next()); //此处打印的是第一个yield   {value: 10, done: false}
 	console.log(g.next()); //{value: NaN, done: false}
-	console.log(g.next()); //{value: undefined, done: true}
+	//console.log(g.next()); //{value: undefined, done: true}
 
 
 </script>
