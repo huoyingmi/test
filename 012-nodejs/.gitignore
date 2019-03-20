@@ -3,3 +3,5 @@ custom/package-lock.json
 custom/package.json
 
 npm/01-npm/package.json
+npm/02-npm/package.json
+npm/02-npm/package-lock.json
