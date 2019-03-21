@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-001-网页换肤.html</title>
+	<link id="pifu" rel="stylesheet" href="../css/pifu1.css">
+</head>
+<script>
+	//函数1是获取皮肤1
+	function p1(){
+		document.getElementById('pifu').href="../css/pifu1.css"
+	}
+	//函数2是获取皮肤2
+	function p2(){
+		document.getElementById('pifu').href="../css/pifu2.css"
+	}
+</script>
+<body>
+	<button onclick="p1()">皮肤1</button>
+	<button onclick="p2()">皮肤2</button>
+</body>
+</html>

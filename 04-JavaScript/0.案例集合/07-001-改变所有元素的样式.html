@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-001-改变所有元素的样式.html</title>
+	<style>
+		li{
+			list-style: none;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>变色</button>
+	<button>变宽</button>
+	<button>变高</button>
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+</body>
+<script>
+	//获取元素
+	var oBtn1 = document.querySelectorAll('button')[0];
+	// console.log(oBtn1);
+	var oBtn2 = document.querySelectorAll('button')[1];
+	// console.log(oBtn2);
+	var oBtn3 = document.querySelectorAll('button')[2];
+	// console.log(oBtn3);
+	var aLi = document.querySelectorAll('#list li');
+	// console.log(aLi);
+	
+	// 添加事件
+	oBtn1.onclick = function(){
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].style.backgroundColor = 'red';
+		}
+	}
+	oBtn2.onclick = function(){
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].style.backgroundColor = '#fff';
+			aLi[i].style.width = '100px';
+		}
+	}
+	oBtn3.onclick = function(){
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].style.height = '50px';
+		}
+	}
+</script>
+</html>
