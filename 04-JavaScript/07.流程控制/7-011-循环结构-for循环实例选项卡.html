@@ -72,12 +72,14 @@
 
 			for(var j=0; j<aBtn.length; j++){
 				aBtn[j].className = '';
+				aContent[j].style.display = 'none';
 			}
 
 			// 函数执行的时候，是谁在执行就是指谁
 			// console.log(this);
 			this.className = 'active';
-			aContent[this.index]。style.display = 'block';
+			aContent[this.index].style.display = 'block';
+			
 		}
 	}
 </script>
