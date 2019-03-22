@@ -31,6 +31,7 @@ emitter.emit('test');
 emitter.emit('test');
 */
 
+// 添加事件的上限，默认值是10
 emitter.setMaxListeners(12);
 emitter.on('test',()=>{
 	console.log("1::",'running test...');
