@@ -20,9 +20,15 @@ emitter.on('test',(arg1,arg2)=>{
 // 扩展运算符
 const args = ['hello','kuazhu'];
 
+/*
 emitter.on('test',(arg1,arg2)=>{
 	console.log('running test...');
 	console.log(arg1,arg2);
+})
+*/
+emitter.on('test',(...args)=>{
+	console.log('running test...');
+	console.log(...args);
 })
 
 emitter.emit('test',...args);
