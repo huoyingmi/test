@@ -1,5 +1,7 @@
-const fs = require('fs');
+// 同步写文件 writeSync
 
+
+const fs = require('fs');
 /*
 //1.打开文件
 	// openSync('文件路径','文件系统标志');
@@ -14,4 +16,4 @@ const fs = require('fs');
 */
 
 //复合样式
-fs.writeFileSync('./01.text.js','kuazhu',{flag:'w'});
+fs.writeFileSync('./01.text.js','kuazhu',{flag:'a'});
