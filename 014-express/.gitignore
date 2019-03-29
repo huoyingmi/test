@@ -1,0 +1,7 @@
+01-start/node_modules/
+01-start/package.json
+01-start/package-lock.json
+
+02-static/node_modules/
+02-static/package.json
+02-static/package-lock.json
