@@ -24,6 +24,12 @@ const BlogSchema = new mongoose.Schema({
     }
 });
 
+// 静态方法
+BlogSchema.statics.findBlog = function(query){
+   return this.findOne(query)
+   .populate("author","-_id");
+}
+
 // 2.生成模型Model
 // 2-1.mongoose.model方法的第一个参数是指定的集合名称，mongoose会自动生成复数
 // 2-2.mongoose.model方法的第二个参数是定义的Schema名称

@@ -60,8 +60,14 @@ db.on('open',()=>{
         }
     })
     */
+    /*
     BlogModel.findOne({title:"title1"})
     .populate('author','-_id')
+    .then(result=>{
+        console.log(result);
+    })
+    */
+    BlogModel.findBlog({title:"title1"})
     .then(result=>{
         console.log(result);
     })

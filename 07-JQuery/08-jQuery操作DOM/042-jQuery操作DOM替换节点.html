@@ -7,6 +7,7 @@
 <body>
 	<button>替换1</button>
 	<button>替换2</button>
+	<button>替换3</button>
 	<div>div1</div>
 	<div>div2</div>
 	<div>div3</div>
@@ -16,11 +17,22 @@
 <script src="../js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
+		//jQuery对象2替换jQuery对象1
+
+		// replaceWith(jquery对象)
         $('button').eq(0).on("click",function(){
         	$('div').replaceWith("<h1>我是大标题</h1>");
         })
+        // replaceWith(html片段)
         $('button').eq(1).on("click",function(){
-        	var 
+        	var $h1 = $('<h1>我是答辩题</h1>');
+        	$('div').replaceWith($h1);
+        })
+
+        //jQuery1替换替他节点
+        $('button').eq(2).on("click",function(){
+        	var $h1 = $('<h1>我是答辩题</h1>');
+        	$h1.replaceAll($('div'));
         })
 
 	})

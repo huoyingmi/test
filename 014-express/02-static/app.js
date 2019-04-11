@@ -5,9 +5,9 @@ const app = express();
 //定义端口号
 const port = 3000;
 //
-// app.use(express.static('public'));
+app.use(express.static('public'));
 //设置虚拟路径
-app.use('/static', express.static('public'))
+// app.use('/static', express.static('public'))
 
 // 请求的处理
 // app.get('/', (req, res) => res.send('Hello World! 你好 世界'));
