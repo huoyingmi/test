@@ -13,12 +13,41 @@ class App extends Component{
 		this.handleAdd = this.handleAdd.bind(this)
 	}
 	handleAdd(){
+		/*
+		// console.log('add...');
+		this.setState({
+			list:[...this.state.list,this.state.val],
+			val:''
+		})
+		*/
+		/*
+		this.setState(()=>{
+			return{
+				list:[...this.state.list,this.state.val],
+				val:''
+			}
+		})
+		*/
+		/*
+		this.setState((preState)=>{
+			return{
+				list:[...preState.list,preState.val],
+				val:''
+			}
+		})
+		*/
 		this.setState(preState=>({
 			list:[...preState.list,preState.val],
 			val:''
 		}))
 	}
 	handleChange(ev){
+		/*
+		// console.log(event.target.value);
+		this.setState({
+			val:event.target.value
+		})
+		*/
 		const val =ev.target.value 
 		this.setState(()=>({
 			val:val
@@ -27,6 +56,11 @@ class App extends Component{
 	handleDel(index){
 		const list = [...this.state.list]
 		list.splice(index,1)
+		/*
+		this.setState({
+			list:list
+		})
+		*/
 		this.setState(()=>({
 			list:list
 		}))
@@ -43,6 +77,11 @@ class App extends Component{
 				<button onClick={this.handleAdd}>新增</button>
 				<ul>
 					{
+						/*
+						this.state.list.map((item,index)=>{
+							return <Item key={index} content={item} handleDel={this.handleDel.bind(this,index)} />
+						})
+						*/
 						this.getItems()
 					}
 				</ul>

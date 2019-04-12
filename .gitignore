@@ -1,0 +1,6 @@
+**/db
+**/node_modules
+*.png
+*.jpg
+*.jpeg
+*/package-lock.json
