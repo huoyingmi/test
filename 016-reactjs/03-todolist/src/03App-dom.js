@@ -51,7 +51,10 @@ class App extends Component{
 					}}
 				/>
 				<button onClick={this.handleAdd}>新增</button>
-				<ul ref={(ul)=>{this.ul = ul}}>
+				<ul ref={(ul)=>{
+						this.ul = ul
+					}}
+				>
 					{
 						this.getItems()
 					}
