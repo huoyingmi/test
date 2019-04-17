@@ -2,7 +2,12 @@ import React,{ Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Item extends Component{
+	constructor(props){
+		console.log('item constructor...');
+		super(props);
+	}
 	render(){
+		console.log('item render...');
 		const { handleDel,content } = this.props;
 		return(
 			<li onClick={handleDel}>
