@@ -7,4 +7,51 @@
 <body>
 	
 </body>
+<script>
+	/*
+	function sum(){
+		var result = 0;
+		for(var i=0; i<arguments.length; i++){
+			result += arguments[i];
+		}
+		// alert(result);//10
+		return result;//没反应
+	}
+	alert(sum(1,2,3,4));//10
+	*/
+	/*
+	function sum(){
+		var result = 0;
+		for(var i=0; i<arguments.length; i++){
+			result += arguments[i];
+		}
+		return;
+	}
+	alert(sum(1,2,3,4));//undefined
+	*/
+	/*
+	function sum(){
+		var result = 0;
+		for(var i=0; i<arguments.length; i++){
+			result += arguments[i];
+		}
+		return;
+		alert(result);
+	}
+	alert(sum(1,2,3,4));//undefined
+	*/
+	function sum(){
+
+		if(arguments[0] == 0){
+			return; //当函数遇到return时，将会终止，后面的不再执行
+		}
+
+		var result = 0;
+		for(var i=0; i<arguments.length; i++){
+			result += arguments[i];
+		}
+		 return result;
+	}
+	alert(sum(0,2,3,4));
+</script>
 </html>
