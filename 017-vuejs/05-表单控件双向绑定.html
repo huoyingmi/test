@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>02-vue实例.html</title>
+	<title>05-表单控件双向绑定.html</title>
 </head>
 <body>
 	<div id="app">
-		<p>{{message}}</p>
+		<p ref="p">{{message}}</p>
+		<input type="text" v-model="message" />
 	</div>
 </body>
 <script src="js/vue.js"></script>
@@ -18,10 +19,6 @@
 			message:"hello vue"
 		}
 	});
-	console.log(vm);
-	console.log("1",vm.message);
-	console.log("2",vm.$data.message);
-	console.log("3",vm.$el);
-	console.log(vm.$el === document.getElementById('app') );
+	// vm.message = "bbb";
 </script>
 </html>
