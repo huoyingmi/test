@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-事件event-阻止默认行为.html</title>
+</head>
+<body>
+	<div id="app">  <!-- @是v-on的间写体 -->
+		<a @click="goshopping($event)" href="http://www.taobao.com">去购物</a>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	//实例函数
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			},
+		methods:{
+			goshopping(event){
+				event.preventDefault();
+				console.log('goshopping')
+			}
+		}
+	});
+</script>
+</html>
