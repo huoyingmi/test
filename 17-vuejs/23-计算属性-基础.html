@@ -7,7 +7,9 @@
 <body>
 	<div id="app">  <!-- @是v-on的间写体 -->
 		<p>原始的message:{{message}}</p>
-		<p>原始的message反转:{{message}}</p>
+		<p>原始的message反转:{{message.split('').reverse().join('')}}</p>
+		<p>计算属性:{{reversedMessage}}</p>
+		<p>计算属性:{{reverseMessage()}}</p>
 	</div>
 </body>
 <script src="js/vue.js"></script>
@@ -18,6 +20,16 @@
 		data:{
 			message:"hello"
 		},
+		methods:{
+			reverseMessage(){
+				return this.message.split('').reverse().join('')
+			}
+		},
+		computed:{
+			reversedMessage(){
+				return this.message.split('').reverse().join('')
+			}
+		}
 	});
 </script>
 </html>
