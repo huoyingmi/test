@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月14日.html</title>
+</head>
+<body>
+	<!-- 将数组arr=[1,2,3,4,5,6]转换成一个每一项都是函数的数组，并且这个函数可以输出他的对应值 -->
+</body>
+<script>
+	var arr = [1,2,3,4,5,6];
+	var len = arr.length;
+	for(var i=0; i<len; i++){
+		var num = arr[i];
+		;(function(num){
+            var f = function(){
+            	console.log(num);
+            };
+            arr[i] = f;
+		})(num);
+	}
+	for(var i=0; i<len; i++){
+		arr[i]();
+	}
+</script>
+</html>

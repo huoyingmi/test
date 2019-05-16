@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function isNum(a,b){
+		var arr = [];
+        for(var i=a; i<b; i++){
+        	var str = i.toString();
+        	var str1 = str.split('').reverse().join('');
+        	if(i == str1){
+                 arr.push(i);
+        	}
+        } 
+        return arr;
+	}
+	var fn = isNum(1,10000);
+	console.log(fn);
+</script>
+</html>

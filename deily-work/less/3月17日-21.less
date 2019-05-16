@@ -1,0 +1,21 @@
+
+@width:100%;
+@height:30px;
+@padding: 10px;
+@border-bottom: 1px solid #ccc;
+@backgroundColor: #f00;
+
+ul{
+	width: @width;
+}
+
+li{
+	list-style: none;
+	width: @width;
+	height: @height;
+	padding: @padding;
+	border-bottom: @border-bottom;
+}
+li&:hover{
+	background: @backgroundColor;
+}

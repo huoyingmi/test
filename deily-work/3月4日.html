@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例函数封装trigger实现内外联系</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+    <!-- 案例函数封装trigger实现内外联系 -->
+	<button>显示</button>
+	<button>隐藏</button>
+	<div class="box"></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	//定义一个对象
+	var slient = {
+        show:function($elem){
+            $elem.trigger("show");
+            $elem.show();
+            $elem.trigger("shown");
+        },
+        hide:function($elem){
+            $elem.trigger("hide");
+            $elem.hide();
+            $elem.trigger("hidden");
+
+        }
+	};
+	// 获取div
+	var $elem = $('.box');
+    // 判断事件是否执行，以及执行一次
+    $elem.on("show shown hide hidden",function(ev){
+         if(ev.type == "show"){
+         	console.log('show...');
+         }else if(ev.type == "shown"){
+         	console.log('shown...');
+         }else if(ev.tpe == "hide"){
+         	console.log('hide...');
+         }else if(ev.type == "hidden"){
+         	console.log('hidden...');
+         }
+    })
+    // 绑定点击显示事件
+    $('button').eq(0).on("click",function(){
+    	slient.show($elem);
+    })
+    // 绑定点击隐藏事件
+    $('button').eq(1).on("click",function(){
+    	slient.hide($elem);
+    })
+</script>
+</html>

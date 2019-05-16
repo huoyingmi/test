@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9-012-执行环境-局部.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 1;
+	function fn(){//局部执行环境
+		var a = 2;
+		console.log(a);//2
+	}
+	fn();//当调用完成时，局部环境销毁，控制权返回给之前的执行环境
+	console.log(a);//1
+</script>
+</html>

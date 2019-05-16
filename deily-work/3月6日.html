@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月6日.html</title>
+</head>
+<body>
+	<!-- 将数组arr=【1,3,5,3,7,1,9,0】 重复数字去掉，从小到大排列，将去重后的数组与排序后的数组展示 -->
+</body>
+<script>
+	var arr = [1,3,5,3,7,1,9,0];
+	console.log("arr::",arr);
+	var array = [];
+	console.log("array::",array);
+	/*
+	function Array(arr){
+		for(var i=0; i<arr.length; i++){
+			for(var j=0; j<array.length; j++){
+				var isDup = false;
+				if(arr[i] == array[j]){
+					isDup = true;
+					break;
+				}
+			}
+			if(!isDup){
+				array.push(arr[i]);
+			}
+		}
+		return array;
+    }
+    var array = Array(arr);
+    console.log("array2::",array);
+    */
+    
+    // 去重复数字
+    for(var i=0; i<arr.length; i++){
+    	if(array.indexOf(arr[i],0) == -1){
+    		array.push(arr[i]);
+    	}
+    }
+    console.log("arr2::",array);
+    
+    // 排序
+    array.sort(function(n1,n2){
+    	return n1-n2;
+    })
+    console.log("array3::",array);
+</script>
+</html>

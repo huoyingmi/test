@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月8日拖拽.html</title>
+	<style>
+		.box1{
+			width: 400px;
+			height: 400px;
+			margin: 60px auto;
+			background: #ccc;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<!-- 利用html拖拽功能实现：容器元素在页面正中间当完成拖拽时，页面弹出已完成拖拽 -->
+	<div class="box2" draggable=true></div>
+	<div class="box1"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('.box1')
+		.on('drop',function(ev){
+			ev.preventDefault();
+			// ondrop 当放置被拖动元素时触发
+			console.log('box1:ondrop...');
+		})
+		.on('dragover',function(ev){
+			ev.preventDefault();
+			// ondragover 被拖动元素正在到放置到容器时触发,默认无法把元素放置到其他元素中,如果需要设置允许放置,我们必须阻止对元素的默认处理方式。
+			// console.log('box1:dragover..');
+		})
+		.on('dragenter',function(ev){
+			ev.preventDefault();
+			// ondragenter 当被拖动元素进入容器时触发
+			console.log('box1:ondragenter..');
+		})
+		.on('dragleave',function(ev){
+			ev.preventDefault();
+			// ondragleave 当被拖动元素离开容器时触发
+			console.log('box1:ondragleave..');
+		})
+		.on('dragend',function(ev){
+			ev.preventDefault();
+			// ondragend 被拖动元素在容器中松开鼠标时触发
+			console.log('box1:ondragend..');
+			alert('已完成拖拽');
+		})
+		.on('drag',function(ev){
+			ev.preventDefault();
+			// ondrag 容器中的被拖动元素拖动时触发
+			console.log('box1:ondrag..');
+		})
+
+		$('.box2').on('dragend',function(){
+			// ondragend 拖拽时松开鼠标时触发
+			console.log('box2:drapend..');
+			alert('已完成拖拽');
+		})
+	})
+</script>
+</html>

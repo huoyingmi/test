@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ask-ajax.html</title>
+</head>
+<body>
+	<button>点击</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on("click",function(){
+			$.get("044-data.json",function(data){
+                 console.log(data);
+			},"json")
+		})
+	})
+</script>
+</html>

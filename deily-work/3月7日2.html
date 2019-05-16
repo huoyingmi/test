@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function isNum(a,b){
+		var arr = [];
+        for(var i=a; i<b; i++){
+        	var str = i.toString();
+        	var str1 = str.split('').reverse().join('');
+        	if(i == str1){
+                 arr.push(i);
+        	}
+        } 
+        return arr;
+	}
+	var fn = isNum(1,10000);
+	console.log(fn);
+	*/
+	/*
+	function isNum(num){
+		var str = num.toString();
+		if(!str[1]){
+			console.log(str);
+		}else if(str[0] == str[1]){
+			console.log(str);
+		}else if(str[0] == str[2]){
+			console.log(str);
+		}else if(str[0] == str[3] && str[1] == str[2]){
+			console.log(str);
+		}
+	}
+	isNum(9999);
+    */
+    /*
+    function isSym(num) {
+        var str = '';
+        for (var i = 1; i <=9; i++) {
+             //如果个位算，可去掉注释
+             str+=i;str += ',';
+            for (var j = 1; j <= 9; j++) {
+                if (i == j) {
+                    str = str + i + ',' ;
+                    str = str + i + j + i + ',';                          
+                }
+                str = str + i + j+j + i + ',';
+            }                    
+        }
+        return str;
+    }
+    var fn = isSym(9999);
+    console.log(fn);
+    */
+    function findNum(){
+       var result="";
+       for(var i=1;i<1000;i++){
+           var str=i.toString();
+           var temp=[];
+           for(var j=str.length-1;j>0;j++){
+               temp.push(str.charAt(j));
+               if(temp.join("")===str){
+                    result+=str+"\n";
+                }
+            }
+        }
+        return result;
+    }
+    var fn = findNum(9999);
+    console.log(fn);
+</script>
+</html>

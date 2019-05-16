@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月19日.html</title>
+</head>
+<body>
+	<!-- 利用ES6的知识定义构造函数，并实现继承 -->
+</body>
+<script>
+	//父元素构造函数
+	class Father{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		sayName(){
+			console.log(this.name);
+		}
+		sayAge(){
+			console.log(this.age);
+		}
+		static sayHi(){
+			console.log('Hi...');
+		}
+	}
+
+	//调用
+	let f = new Father("Tom",20);
+	console.log(f);
+	f.sayName();
+	f.sayAge();
+	Father.sayHi();
+
+	// 子元素构造函数 继承
+	class Son extends Father{
+		constructor(name,age,major){
+			super(name,age);
+			this.major = major;
+		}
+		sayMajor(){
+			console.log(this.major);
+		}
+	}
+
+	//调用
+	let s = new Son("Leo",18,"computer");
+	console.log(s);
+	s.sayName();
+	s.sayAge();
+	s.sayMajor();
+	Son.sayHi();
+</script>
+</html>

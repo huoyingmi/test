@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM操作案例.html</title>
+</head>
+<body>
+	<ul>
+		<li class="item1">li1</li>
+		<li class="item3">li3</li>
+		<li class="item7">li7</li>
+		<li class="item5">li5</li>
+	</ul>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function(){
+		var $li1 = $('<li>li0</li>');
+		$('ul').prepend($li1);	
+	
+		var $li2 = $('<li>li2</li>');
+		$('.item1').append($li2);	
+	
+		var $li4 = $('<li>li4</li>');
+		$('.item7').replaceWith($li4);	
+
+		var $li6 = $('<li>li6</li>');
+		$('ul').append($li6);
+		
+	})
+</script>
+</html>

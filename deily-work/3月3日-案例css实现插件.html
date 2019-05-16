@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例css实现插件.html</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+			border: 1px solid #000;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	;(function(window){
+         $.fn.extend({
+         	setCss:function(key,value){
+         		this.each(function($this){
+	         		// console.log(this);
+	                 var $this = $(this);
+	                 if(!value){
+	                 	console.log($this.css(key));
+	                 }else{
+	                 	console.log($this.css(key,value))
+	                 }
+	         	})
+         	}
+         	
+         })
+	})(window);
+</script>
+<script>
+	// $('div').setCss("width");
+	$('div').setCss("width","300px");
+</script>
+</html>
