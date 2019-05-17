@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-004-数组-数组的字符排序.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = ["hi","good","yellow","hello","red"] 
+	console.log("1::",arr1);// ["hi", "good", "yellow", "hello", "red"]
+ 
+ 	var arr2 = arr1.sort();
+ 	console.log("2::",arr1);// ["good", "hello", "hi", "red", "yellow"]
+ 	console.log("3::",arr2);// ["good", "hello", "hi", "red", "yellow"]
+	arr2.push("blue");
+	console.log("4::",arr1);// ["good", "hello", "hi", "red", "yellow", "blue"]
+ 	console.log("5::",arr2);// ["good", "hello", "hi", "red", "yellow", "blue"]	
+</script>
+</html>

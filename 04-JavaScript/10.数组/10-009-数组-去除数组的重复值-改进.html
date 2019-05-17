@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-009-数组-去除数组的重复值-改进.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [11,12,64,11,64,23,12] 
+	console.log("1:",arr1);
+	
+	// 去重的函数
+	function uniqueArray(arr){
+		// 2.准备一个空的数组
+		var result = [];
+ 		// 1.遍历原数组
+ 		for(var i=0;i<arr.length;i++){
+		/*
+ 			// 6.默认时，是不相同的
+			var isDup = false;
+ 			// 3.遍历新的空数组
+ 			for(var j=0;j<result.length;j++){
+ 				// 4.将原数组中的值和新数组中的值进行比较
+ 				if(arr[i] == result[j]){
+ 					// 5.如果相同则退出，此时需要一个属性判断是否相同的状态
+ 					isDup = true;
+ 					// 7.当相同时，循环结束退出
+ 					break;
+ 				}
+ 			}
+ 			// 8.当不相同时，将元素添加到新数组中
+ 			if(!isDup){
+ 				result.push(arr[i]);
+ 			}
+		*/
+			//原理：在result中查找与arr[i]相同的原素
+			// 找到是 1 找不到是 -1
+			if(result.indexOf(arr[i]) == -1){
+				result.push(arr[i]);
+			}
+ 		}
+ 		// 9.全部循环结束，将新数组返回
+ 		return result;
+	}
+	// 10.执行函数，接收新数组并打印
+	var arr2 = uniqueArray(arr1);
+	console.log(arr2);
+</script>
+</html>
