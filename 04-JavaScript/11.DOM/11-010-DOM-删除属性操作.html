@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-010-DOM-删除属性操作.html</title>
+</head>
+<body>
+    <input type="text" id="txt" value="88" test="99">
+    <input type="button" id="btn" value="点击">
+    <textarea id="content" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+    var oBtn = document.getElementById('btn');
+    var oContent = document.getElementById('content');
+
+    oBtn.onclick = function(){
+       // 删除属性
+       oTxt.removeAttribute('value');
+       oTxt.removeAttribute('test');
+
+    } 
+</script>
+</html>

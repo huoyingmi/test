@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>8-009-函数-递归求阶层.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//5!=5*4*3*2*1
+	//0!=1!=1
+	//n!=n*(n-1)!
+	function fact(n){
+		if(n==1){
+			return 1;
+		}else{
+			return n*fact(n-1);
+		}
+	}
+	// console.log(fact(5));
+   /*
+	var fact2 = fact;
+	fact = 1;
+	console.log('fact::',fact);
+	console.log('fact2::',fact2);
+   */
+    var fact2 = fact(5);
+    //console.log('fact2::',fact2(5));//Uncaught TypeError: fact2 is not a function
+	console.log('fact::',fact(5));
+	console.log('fact2::',fact2);
+</script>
+</html>
