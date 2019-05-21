@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-019-DOM-动态九宫格.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: relative;
+            margin-top: 20px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">生成格子</button>
+    <div id="box">
+        <div class="son"></div>
+    </div>
+</body>
+<script>
+    var oBtn = document.getElementById('btn');
+    var oBox = document.getElementById('box');
+    var aSon = oBox.children;
+    var allCol = 3;
+    var iWidth = 100;
+    var iHeight = 100;
+    var iMargin = 15;
+
+    oBtn.onclick = function(){
+        var newSon = aSon[0].cloneNode(true);
+        oBox.appendChild(newSon);
+
+        // 生成九宫格的理论
+        for(var i=0; i<aSon.length; i++){
+        // 列数与 i除于3的余数 有关
+        var iCol = i % allCol;//余数
+        // 行数与 i除于3的商 有关
+        var iRow = parseInt(i / allCol);//商取整
+
+        // left值与 列数相关
+        // i=0, left = (0%3) * (100+15) = 0*115;
+        // i=0, top = (0/3) * (100+15) = 0*115
+        // i=1, left = (1%3) * (100+15) = 1*115=115
+        // i=1, top = (1/3) * (100+15) = 0*115=0
+        // i=2, left = (2%3) * (100+15) = 2*115=230
+        // i=2, top = (2/3) * (100+15) = 0*115=0
+        aSon[i].style.left = iCol*(iWidth + iMargin) + "px";
+        // top值与 行数相关
+        aSon[i].style.top = iRow*(iHeight + iMargin) + "px";
+    }
+    }
+
+    
+
+   
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-001-浏览器窗口的位置定位.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	console.log("window.screenLeft::",window.screenLeft);
+	console.log("window.screenTop::",window.screenTop);
+	console.log("window.screenX::",window.screenX);
+	console.log("window.screenY::",window.screenY);
+
+	// window.screenLeft/Top浏览器窗口的兼容问题
+	var iLeft = 0;
+	var iTop = 0;
+	/*
+	// 方法一  if判断
+	if(window.screenLeft){
+		iLeft = window.screenLeft;
+	}else{
+		iLeft = window.screenX
+	}
+	
+	if(window.screenTop){
+		iTop = window.screenTop;
+	}else{
+		iTop = window.screenY
+	}
+	*/
+	/*
+	// 方法二  三元运算
+	window.screenLeft ? iLeft=window.screenLeft : iLeft=window.screenX
+	
+	window.screenTop ? iTop=window.screenTop : iTop=window.screenY
+	*/
+	// 方法三  逻辑或运算
+	iLeft = window.screenLeft || window.screenX;
+	iTop = window.screenTop || window.screenY;
+
+	console.log(iLeft);
+	console.log(iTop);
+</script>
+</html>
