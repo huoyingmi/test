@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-005-BOM-运行代码.html</title>
+</head>
+<body>
+	<textarea id="txt" cols="30" rows="10"></textarea>
+	<button id="btn">运行</button>
+</body>
+<script>
+	var oBtn =document.getElementById('btn');
+	var oTxt =document.getElementById('txt');
+	oBtn.onclick = function(){
+		// 1.获取输入的内容
+		var val = oTxt.value;
+		// 2.打开新窗口
+		var newWin = window.open("about:blank");
+		// 3.将内容在新窗口中运行
+		newWin.document.write(val);
+
+		// window.close()关闭页面在有些浏览器中不会运行，即页面不关闭，但是如果将window.close()关闭页面的运行代码写入此处页面的val中，那么在任何浏览器中都会运行
+	}
+</script>
+</html>
