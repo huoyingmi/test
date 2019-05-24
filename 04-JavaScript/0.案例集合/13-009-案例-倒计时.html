@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-009-案例-倒计时.html</title>
+    <style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			text-align: center;
+			margin-top: 200px;
+			color: #fff;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		
+	</div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	// 1.获取结束的时间
+	var endDate = new Date("2019-05-30 00:00:00");
+	var endTimer = endDate.getTime();
+	var time = 0;
+	// 处理时间的个数
+	function to2Str(num){
+		return num < 10 ? "0"+num : ""+num;
+	}
+
+	function handleTime(){
+		// 2.获取现在到结束的所有的毫秒数
+		var allMinSeconds = endTimer - Date.now();
+		// 7.判断倒计时停止
+		if(allMinSeconds <= 0){
+			allMinSeconds = 0;
+			clearInterval(time);
+		}
+		// 3.将毫秒数变成秒,并取整
+		var allSeconds = parseInt(allMinSeconds / 1000);
+		// 4.将总秒数换算成时分秒
+		var iHour = parseInt((allSeconds%86400)/3600);
+		var iMinute = parseInt((allSeconds % 3600) / 60);
+		var iSecond = (allSeconds % 3600) % 60;
+		// 将时换成天数
+		var iDay = parseInt(allSeconds / 86400);
+		// 5.将时分秒添加到页面中显示
+		oTimer.innerHTML ="距离活动还有"+ iDay +"天"+ to2Str(iHour) +"小时"+ to2Str(iMinute) +"分钟"+ to2Str(iSecond) +"秒";
+	}
+	// 6.自动运行
+	var time = setInterval(handleTime,500);
+	handleTime();
+	
+</script>
+</html>
