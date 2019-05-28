@@ -1,0 +1,37 @@
+<!DOCTYPE html> <!-- 混杂模式BackCompat -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14-018-动画-中部固定.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+		#box{
+			position: absolute;
+			right: 0;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="../js/util.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	window.onload = window.onresize =  window.onscroll = function(){
+		var getTop = document.documentElement.scrollTop;
+		var iTarget = (window.innerHeight - oBox.offsetHeight)/2 + getTop;
+		animate(oBox,'top',iTarget);		
+	}
+	
+	
+</script>
+</html>

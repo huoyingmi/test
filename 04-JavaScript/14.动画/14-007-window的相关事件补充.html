@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- 混杂模式BackCompat -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14-007-动画-window的相关事件补充.html</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	//页面加载完毕触发
+	window.onload = function(){
+		console.log('a');
+	}
+	//窗口大小变化
+	window.onresize = function(){
+		console.log("aa");
+	}
+	//拖动滚动条
+	window.onscroll = function(){
+		console.log("aaa");
+	}
+</script>
+</html>

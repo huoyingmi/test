@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> --><!-- 混杂模式BackCompat -->
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -18,7 +18,7 @@
 	
 </body>
 <script>
-	console.log('document.compatMode',document.compatMode)
+	console.log('document.compatMode',document.compatMode)//CSS1Compat标准模式
 	console.log('document.documentElement.clientWidth',document.documentElement.clientWidth);
 	console.log('document.documentElement.clientHeight',document.documentElement.clientHeight);
 	console.log('document.body.clientWidth',document.body.clientWidth);
@@ -26,5 +26,13 @@
 	console.log('window.innerWidth',window.innerWidth);
 	console.log('window.innerHeight',window.innerHeight);
 
+	var w = 0,h = 0;
+	if(document.compatMode == "CSS1Compat"){
+		w = document.documentElement.clientWidth;
+		h = document.documentElement.clientHeight;
+	}else{
+		w = document.body.clientWidth;
+		h = document.body.clientHeight;
+	}
 </script>
 </html>
