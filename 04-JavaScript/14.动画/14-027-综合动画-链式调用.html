@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>14-025-动画-匀速减速动画综合封装函数.html</title>
+	<title>14-027-综合动画-链式调用.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -12,7 +12,7 @@
 			width: 100px;
 			height: 100px;
 			background-color: #f00;
-			opacity: 0.5;
+			opacity: 0.3;
 		}
 	</style>
 </head>
@@ -32,9 +32,10 @@
  * @param  {string} attr   [属性名称]
  * @param  {number} target [目标值]
  * @param  {boolean} isLinear [匀速还是减速]
+ * @param  {function} fnEnd [动画结束执行的函数]
  */
 	//封装函数
-	function animate(obj,attr,target,isLinear){
+	function animate(obj,attr,target,isLinear,fnEnd){
 		// 设置默认是匀速动画
 		if(isLinear == undefined){
 			isLinear = true;
@@ -92,6 +93,9 @@
 			if(isStopCurrent){
 				//清除定时器
 				clearInterval(obj.timer);
+
+				// 判断第五个函数参数是否继续执行
+				typeof fnEnd == "function" && fnEnd();
 			}else{
 				//如果不终止当前动画,运动
 				if(attr == "opacity"){
@@ -107,8 +111,20 @@
 	}
 	
 	oDiv1.onmouseover = function(){
-		animate(oDiv1,"width",300,true);
+		animate(oDiv1,"width",300,false,function(){
+			animate(oDiv1,"height",300,true,function(){
+				animate(oDiv1,"opacity",100);
+			});
+		});
 	}
+	oDiv1.onmouseout = function(){
+		animate(oDiv1,"width",100,false,function(){
+			animate(oDiv1,"height",100,true,function(){
+				animate(oDiv1,"opacity",30);
+			});
+		});
+	}
+
 	oDiv2.onmouseover = function(){
 		animate(oDiv2,"height",300);
 	}

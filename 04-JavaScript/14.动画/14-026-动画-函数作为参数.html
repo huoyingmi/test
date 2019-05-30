@@ -1,0 +1,29 @@
+<!DOCTYPE html> <!-- 混杂模式BackCompat -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14-026-动画-函数作为参数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function show(fn){
+		fn();
+	}
+	show(function(){
+		alert('aa');
+	})
+	// fn = function(){ alert('aa') } 匿名函数作为参数
+	*/
+	function sum(x,y,fn){
+		var result =  x*2 + y*2;
+		fn(result);
+	}
+	sum(2,3,function(result){
+		alert(result);//10
+	})
+	// fn(result) = function(result){ alert(result) } 匿名函数作为参数,result是匿名函数的参数
+</script>
+</html>
