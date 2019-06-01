@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15-003-事件-事件流-捕获和冒泡.html</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	// 添加事件处理程序
+		//默认 和 false 情况下，事件冒泡顺序：oBox > body > html > document > window
+	oBox.addEventListener("click",function(){
+		console.log("oBox click");
+	})
+	document.addEventListener("click",function(){
+		console.log("document click");
+	})
+	window.addEventListener("click",function(){
+		console.log("window click");
+	})
+	document.documentElement.addEventListener("click",function(){
+		console.log("html click");
+	})
+	document.body.addEventListener("click",function(){
+		console.log("body click");
+	})
+	/*
+	//true时，事件捕获顺序：window > document > html > body > oBox
+	oBox.addEventListener("click",function(){
+		console.log("oBox click");
+	},true)
+	document.addEventListener("click",function(){
+		console.log("document click");
+	},true)
+	window.addEventListener("click",function(){
+		console.log("window click");
+	},true)
+	document.documentElement.addEventListener("click",function(){
+		console.log("html click");
+	},true)
+	document.body.addEventListener("click",function(){
+		console.log("body click");
+	},true)
+	*/
+</script>
+</html>

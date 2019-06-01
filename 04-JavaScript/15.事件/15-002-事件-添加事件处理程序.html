@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15-002-事件-添加事件处理程序.html</title>
+</head>
+<body>
+	<button id="btn1">点我</button>
+	<button id="btn2">移除事件</button>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+
+	// 执行函数
+	function show(){
+		alert('show...');
+	}
+	function sayHi(){
+		alert("sayHi..");
+	}
+
+	// 添加事件处理程序 addEventListener("事件名",执行函数名,false);
+	oBtn1.addEventListener('click',show,false);
+	oBtn1.addEventListener('click',sayHi,false);
+	oBtn1.addEventListener('click',function(){
+		alert('匿名函数..');
+	},false);
+
+	// 移出事件处理程序removeEventListener("事件名",执行函数名,false);
+	oBtn2.addEventListener('click',function(){
+		oBtn1.removeEventListener('click',show,false);
+		oBtn1.removeEventListener('click',sayHi,false);
+		oBtn1.removeEventListener('click',function(){
+			alert('匿名函数..');
+		},false);
+		// 无法清除匿名函数
+	},false);
+</script>
+</html>

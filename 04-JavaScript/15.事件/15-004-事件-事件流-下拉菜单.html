@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15-004-事件-事件流-下拉菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#menu{
+			width: 100px;
+			height: 600px;
+			background-color: #ccc;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">菜单</button>
+	<div id="menu"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oMenu = document.getElementById('menu');
+
+	// 添加事件点击 btn 菜单出现
+		// false,事件冒泡
+	oBtn.addEventListener("click",function(ev){
+		oMenu.style.display = "block";
+
+		//由于事件冒泡，所以 oBtn事件 会受 document事件 影响，需要阻止冒泡，此处引入参数ev
+		ev.stopPropagation();
+	},false);
+
+	// 因为 oMenu事件 会受 document事件 影响，需要阻止冒泡
+	oMenu.addEventListener("click",function(ev){
+		ev.stopPropagation();
+	},false);
+
+	// 添加事件点击 空白 菜单消失
+	document.addEventListener("click",function(){
+		oMenu.style.display = "none";
+	},false);
+</script>
+</html>

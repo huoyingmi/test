@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- 混杂模式BackCompat -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14-030-综合动画-动画发布效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 600px;
+			margin: 100px auto;
+		}
+		li{
+			width: 100%;
+			height: 40px;
+			border-bottom: 1px dashed #ccc;
+			list-style: none;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<input type="text" id="txt">
+		<input type="button" value="发布" id="btn">
+		<ul id="ul1">
+			<li>xxx</li>
+		</ul>
+	</div>
+</body>
+<script src="../js/util.js"></script>
+<script>
+	//获取元素
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	var oUl = document.getElementById('ul1');
+	//绑定事件
+	oBtn.onclick = function(){
+		//生成li容器
+		var oLi = document.createElement('li');
+		// 将txt输入的内容添加到li中
+		oLi.innerHTML = oTxt.value;
+		// 新输入的内容添加到前一个的上面
+		oUl.insertBefore(oLi,oUl.firstChild);
+		// 将输入框的内容清空
+		oTxt.value = "";
+
+		//将动画需要改变的属性设一个原始的值
+		oLi.style.height = 0;
+		oLi.style.opacity = 0;
+		// 实现添加的动画效果，目标值改变
+		animate(oLi,{height:40},true,function(){
+			animate(oLi,{opacity:100});
+		})
+	}
+</script>
+</html>
