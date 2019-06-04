@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15-012-鼠标事件-自定义滚动条.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 500px;
+			height: 30px;
+			background-color: #ccc;
+			position: relative;
+			margin: 100px auto;
+		}
+		#btn{
+			position: absolute;
+			top:0px;
+			left:0px;
+			width: 30px;
+			height: 30px;
+			background-color: red;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="btn"></div>
+	</div>
+	<div id="box"></div>
+</body>
+<script src="../js/util.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	var oBtn = document.getElementById('btn');
+	var oWrap = document.getElementById('wrap');
+	// 定义一个变量表示 当鼠标按下时鼠标与物体边框的距离
+	var disX = 0,disY = 0;
+
+	// 当鼠标按下的事件 onmousedown
+	oBtn.onmousedown = function(ev){
+		// 此时鼠标与物体边框的距离
+		disX = ev.clientX - oBtn.offsetLeft;
+
+		// 鼠标拖拽事件
+		document.onmouseover = function(ev){
+			// 为了方便进行判断设变量 l，t
+			var l = ev.clientX - disX;
+
+			//限制左右不出容器
+			if(l < 0){
+				l = 0;
+			}else if(l > oWrap.offsetWidth - oBtn.offsetWidth){
+				l = oWrap.offsetWidth - oBtn.offsetWidth;
+			}
+			// 计算拖动距离的比例
+			var scale = l / (oWrap.offsetWidth - oBtn.offsetWidth);
+			console.log(scale);
+
+			oBtn.style.left = l + 'px';
+
+			// 计算 box 随着 btn 的拖动变化的距离
+			oBox.style.width = 100 + 500*scale + 'px';
+			oBox.style.height = 100 + 300*scale + 'px';
+			oBox.style.opacity = scale ;
+		}
+
+		// 当鼠标离开时，结束事件
+		document.onmouseup = function(){
+			document.onmouseover = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

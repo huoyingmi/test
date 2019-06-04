@@ -1,1 +1,0 @@
-expoer const {a} = 1;
