@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9-009-作用域-函数作用域.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function fn(){
+		var a =1; //局部变量
+		console.log("1:",a);//1
+
+		function fn1(){
+			console.log("2:",a);//1
+		}
+		fn1();
+	}
+	fn();
+	console.log("3:",a);//访问不到
+</script>
+</html>

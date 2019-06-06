@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-022-05-动画-百分比动画.html</title>
+	<style>
+	    .fa{
+	    	width: 800px;
+	    	height: 700px;
+	    	border: 1px solid #000;
+	    	margin: 0 auto;
+	    	position: relative;
+	    }
+	    .son{
+	    	width: 100px;
+	    	height: 100px;
+	    	background: #000;
+	    	animation: sport 4s linear;
+	    	position: absolute;
+	    	left: 0;
+	    	top: 0;
+	    }
+		@keyframes sport{
+			0%{
+				left: 0;
+				top: 0;
+			}
+			25%{
+				left: 700px;
+				top: 0;
+			}
+			50%{
+				left: 700px;
+				top: 600px;
+			}
+			75%{
+				left: 0;
+				top: 600px;
+			}
+			100%{
+				left: 0;
+				top: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="fa">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

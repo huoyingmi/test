@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>043-jQuery操作DOM复制节点.html</title>
+</head>
+<body>
+	<button>复制1</button>
+	<button>复制2</button>
+	<div>div1</div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on("click",function(){
+			alert('a');
+		})
+
+		//不传参数时，clone的参数默认是false，只复制DOM节点，不复制事件
+		$('button').eq(0).on('click',function(){
+			var $dom = $('div').clone(); //只是克隆出dom节点
+			$('body').append($dom); 
+			//为了验证克隆的执行，将复制的DOM节点添加到body中
+		})
+
+		// 当参数是true时，即复制DOM节点也复制事件
+		$('button').eq(1).on('click',function(){
+			var $dom = $('div').clone(true); //只是克隆出dom节点
+			$('body').append($dom); 
+			//为了验证克隆的执行，将复制的DOM节点添加到body中
+		})
+	})
+</script>
+</html>

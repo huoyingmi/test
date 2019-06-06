@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6-009-优先级.html</title>
+	<script>
+		console.log('aa'+1+1+'bb');//aa11bb
+		console.log('aa'+(1+1)+'bb');//aa2bb
+
+		console.log(0||2&&5);//5
+		console.log(0&&2||5);//5
+
+		console.log(!0 && 2 || !5);//2
+		console.log(!0 && !(2 || !5));//false
+		console.log((1 || 0) && 3 && 4);//4
+		console.log((1 || 0 && 3) && 4);//4
+		console.log(1 || !(0 && 3) && 4);//1
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

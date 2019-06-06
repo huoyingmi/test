@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-04-原子筛选-过滤关键字.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">点击添加</button>
+	<ul id="ul1">
+		
+	</ul>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		var reg = /李小姐|包小姐/;
+		//oLi.innerHTML = oTxt.value;
+		oLi.innerHTML = oTxt.value.replace(reg,'*');
+		oUl.appendChild(oLi);
+
+	}
+</script>
+</html>

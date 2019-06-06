@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-jQuery的静态方法-map.html</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+	<div>div7</div>
+	<div>div8</div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	var arr1 = [1,4,6,3,7]
+	var aDiv = document.getElementsByTagName('div');
+	var set = {0:'aa',1:'bb',2:'cc',length:3}
+
+	var ret1 = arr1.map(function(item,index){
+    	return item;
+    });
+    console.log("1::",ret1);
+    var ret2 = $.map(arr1,function(item,index){
+    	return item;
+    })
+    console.log("2::",ret2);
+
+    // var ret3 = aDiv.map(function(item,index){
+    // 	return item;
+    // });
+    // console.log("3::",ret3);
+    var ret4 = $.map(aDiv,function(item,index){
+    	return item;
+    })
+    console.log("4::",ret4);
+
+    // var ret5 = set.map(function(item,index){
+    // 	return item;
+    // });
+    // console.log("5::",ret5);
+    var ret6 = $.map(set,function(item,index){
+    	return item;
+    })
+    console.log("6::",ret6);
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-007-08-选择器-兄弟选择器.html</title>
+	<style>
+	/*相邻兄弟选择器 只能向下选，不能像上选
+		h3+p{
+			color: red;
+		}
+		p+p{
+			color: red;
+		}
+		p+ul{
+			color: red;
+		}*/
+		.li1+li{
+			color: red;
+		}
+		/*通用兄弟选择器 只能向下选，不能像上选 可以不相邻
+		h3~p{
+			color: red;
+		}
+		.li1~li{
+			color: red;
+		}
+		.li3~li{
+			color: red;
+		}*/
+
+	</style>
+</head>
+<body>
+	<div>
+		<h3>h3</h3>
+		<p>p1</p>
+		<p>p2</p>
+		<ul class="ul1">
+			<li class="li1">li1</li>
+			<li class="li2">li2</li>
+			<li class="li3">li3</li>
+			<li class="li4">li4</li>
+		</ul>
+	</div>
+	<ul class="ul2">
+		<li class="li1">li1</li>
+		<li class="li2">li2</li>
+		<li class="li3">li3</li>
+		<li class="li4">li4</li>
+	</ul>
+</body>
+</html>

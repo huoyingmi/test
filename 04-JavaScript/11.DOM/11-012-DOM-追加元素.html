@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="UTF-8">
+	  <title>11-012-DOM-追加元素.html</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <input type="button" id="btn" value="点击">
+    <ul id="ul2">
+        
+    </ul>
+</body>
+<script>
+    //获取元素
+    var oUl1 = document.getElementById('ul1');
+    var oUl2 = document.getElementById('ul2');
+    var oBtn = document.getElementById('btn');
+    var aLi1 = oUl1.children;
+
+    // 添加事件
+    oBtn.onclick = function(){
+        /*
+        for(var i=0; i<aLi1.length; i++){
+            oUl2.appendChild(aLi1[i]);
+        }
+        */
+        oUl2.appendChild(oUl1.firstElementChild);
+    }
+</script>
+</html>

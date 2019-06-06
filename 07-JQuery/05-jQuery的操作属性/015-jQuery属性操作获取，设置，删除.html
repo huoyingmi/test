@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-jQuery属性操作获取，设置，删除.html</title>
+</head>
+<body>
+	<input type="text" name="a1" value="aaa">
+	<input type="text" name="b1" value="bbb">
+	<input type="text" name="c1" value="ccc">
+	<input type="checkbox">
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('input'));
+		// 注意:只能获取第一个元素的值
+		console.log($('input').attr("name"));
+		console.log($('input').attr("value"));
+		console.log($('input').eq(1).attr("value"));
+
+		console.log($('input').prop("name"));
+		console.log($('input').prop("value"));
+		console.log($('input').eq(2).prop("value"));
+
+        //设置
+        console.log($('input').eq(1).attr("value","aaaa1"));
+        console.log($('input').eq(0).attr("value","aaaa1 aaaaa1"));
+        console.log($('input').eq(2).attr("name","Tom"));
+
+        console.log($('input').eq(2).prop("value","bbbb2"));
+        console.log($('input').eq(1).prop("name","Tom Amy"));
+        console.log($('input').eq(2).prop("name","Amy"));
+        // 删除
+        console.log($('input').eq(0).removeAttr("value"));
+        console.log($('input').eq(2).removeAttr("name"));
+
+        console.log($('input').eq(2).removeProp("value"));
+        console.log($('input').eq(1).removeProp("name"));
+        //attr和prop的区别
+        
+	})
+</script>
+</html>

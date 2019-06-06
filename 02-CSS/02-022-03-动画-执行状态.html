@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-022-03-动画-执行状态.html</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			animation-name: sport;
+			animation-duration: 2s;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			margin-top: 20px;
+			animation-name: sport;
+			animation-duration: 2s;
+			/*animation-delay: 1s;*/
+			animation-timing-function: linear;
+			/*animation-iteration-count: 2;*/
+			animation-iteration-count: infinite;
+			/*animation-direction: normal;*/
+			animation-direction: alternate;
+			/*动画执行的状态执行和暂停*/
+			/*animation-play-state: running;*/
+			animation-play-state: paused;
+		}
+		.box2:hover{
+			animation-play-state: running;
+		}
+		@keyframes sport{
+			form{
+				width: 200px;
+			}
+			to{
+				width: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>

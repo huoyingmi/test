@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-007-数组-比较函数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [11,12,64,45,566,23,4] 
+	console.log("1:",arr1);
+	// 函数作为参数传入
+	arr1.sort(function(n1,n2){
+		// console.log(n1,n2);
+	/*
+		if(n1 < n2){
+			return -1;
+		}else if(n1 > n2){
+			return 1;
+		}else{
+			return 0;
+		}
+	*/
+		//return n1 -n2;//升序
+		return n2 -n1;//降序
+
+	})
+	console.log("2:",arr1);
+</script>
+</html>

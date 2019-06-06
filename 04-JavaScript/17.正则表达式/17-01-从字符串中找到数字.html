@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-1-从字符串中找到数字</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//定义一个字符串
+	var str = 'good 12 345 hi 23add yes55';
+	console.log(str);
+	var result = [];
+	var tmp = '';
+	//遍历整个字符串
+	for(var i=0; i<str.length; i++){
+		//判断是否是数字
+		if(!isNaN(parseInt(str.charAt(i)))){
+			//result.push(str.charAt(i));
+			tmp += str.charAt(i);
+		}else{
+			if(tmp){
+				result.push(tmp);
+				tmp = '';
+			}
+		}
+	}	
+	if(tmp){
+		result.push(tmp);
+	}
+	console.log(result);
+
+	console.log(str.match(/\d+/g));
+</script>
+</html>

@@ -1,0 +1,4 @@
+js/node_modules/
+js/package.json
+js/package-lock.json
+js/jquery-1.12.4.js

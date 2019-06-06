@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9-004-var的使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var a = 1;
+	// a = 1; //(var a = 1) == (a = 1) 全局变量
+	console.log("1:",a);
+	*/
+	/*
+	function fn(){
+		//var a = 1; //局部变量
+		//a = 1; //全局变量
+	}
+	fn();
+	console.log(a);
+    */
+    /*
+    function fn(){
+    	"use strict" //严格模式下,必须用var定义
+		var a = 1; //局部变量
+		// a = 1; //全局变量
+		console.log(a);
+	}
+	fn();
+	*/
+	"use strict" //严格模式下,必须用var定义
+	function fn(){
+		var a = 1; //局部变量
+		// a = 1; //全局变量
+		console.log(a);
+	}
+	fn();
+	/*
+	"use strict" //严格模式下,必须用var定义
+	var a = 1;
+	// a = 1; //(var a = 1) == (a = 1) 全局变量
+	console.log("1:",a);
+	*/
+
+</script>
+</html>

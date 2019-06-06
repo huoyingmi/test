@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*我是注释二 编译被保留，就是会翻译到css中*/
+.box1 {
+  color: #ff0000;
+  width: 200px;
+  height: 200px;
+  background: #ccc;
+}
+.box2 {
+  color: #ff00ff;
+}

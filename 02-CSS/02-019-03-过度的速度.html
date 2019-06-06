@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-019-03-过度的速度.html</title>
+	<style>
+		ul{
+			width: 600px;
+			height: 700px;
+			border: 1px solid #000;
+			padding-inline-start: 0px;
+		}
+		ul li{
+			list-style: none;
+			width: 100px;
+			height: 70px;
+			background: blue;
+			margin-top: 20px;
+			margin-left: 0px;
+			transition-duration: 4s;
+			transition-property: margin-left;
+		}
+		ul:hover li:nth-child(1){
+			margin-left: 500px;
+		}
+		ul:hover li:nth-child(2){
+			margin-left: 500px;
+			transition-timing-function: ease;
+		}
+		ul:hover li:nth-child(3){
+			margin-left: 500px;
+			transition-timing-function: ease-in;
+		}
+		ul:hover li:nth-child(4){
+			margin-left: 500px;
+			transition-timing-function: ease-out;
+		}
+		ul:hover li:nth-child(5){
+			margin-left: 500px;
+			transition-timing-function: ease-in-out;
+		}
+		ul:hover li:nth-child(6){
+			margin-left: 500px;
+			transition-timing-function: linear;
+		}
+		ul:hover li:nth-child(7){
+			margin-left: 500px;
+			transition-timing-function: cubic-bezier(0,0,1,4);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>默认</li>
+		<li>ease</li>
+		<li>ease-in</li>
+		<li>ease-out</li>
+		<li>ease-in-out</li>
+		<li>linear</li>
+		<li>cubic-bezier</li>
+	</ul>
+</body>
+</html>

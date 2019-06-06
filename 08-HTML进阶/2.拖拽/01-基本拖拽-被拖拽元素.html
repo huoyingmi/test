@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-基本拖拽-被拖拽元素.html</title>
+	<style>
+		.box1{
+			width: 400px;
+			height: 400px;
+			background: #ccc;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2" draggable=true></div>
+</body>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('.box2')
+		.on('dragstart',function(){
+			// ondragstart 当元素开始拖动时触发
+			console.log('box2:ondragstart...');
+		})
+		.on('drag',function(){
+			// ondrag 被拖动元素拖动时触发
+			console.log('box2:ondrap..');
+		})
+		.on('dragend',function(){
+			// ondragend 拖拽时松开鼠标时触发
+			console.log('box2:drapend..');
+		})
+	})
+</script>
+</html>

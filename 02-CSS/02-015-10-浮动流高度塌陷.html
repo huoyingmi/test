@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-015-10-浮动流高度塌陷.html</title>
+	<style>
+		.father{
+			width: 600px;
+			/*height: 600px;*/
+			border: 1px solid #000;
+		}
+		.son1{
+			/*width: 200px;*/
+			width: 201px;
+			/*height: 200px;*/
+			/*background: rgba(0,0,0,0.2);*/
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<!-- <div class="son1">cggrdgfg1</div> -->
+		<div class="son2"></div>
+	</div>
+</body>
+</html>

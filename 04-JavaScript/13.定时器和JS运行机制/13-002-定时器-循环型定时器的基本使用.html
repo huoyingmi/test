@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13-002-定时器-循环型定时器的基本使用.html.html</title>
+</head>
+<body>
+	  <button id="btn">关闭</button>
+</body>
+<script>	
+  	// setInterval("console.log(123)",2000);
+    // window.setInterval("console.log(123)",2000);
+    /*
+    function show(){
+      console.log("show setInterval..");
+    }
+    setInterval(show,2000);
+    */
+    /*
+    var timer = setInterval(function(){
+      console.log("setInterval...");
+    },2000)
+    console.log("timer",timer);
+    */
+    
+    var oBtn = document.getElementById('btn');
+
+    var timer = setInterval(function(){
+      console.log("setInterval...");
+    },1000)
+    console.log(timer);
+    
+    oBtn.onclick = function(){
+      clearInterval(timer);
+    }
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-008-03-02-02-优先级2混合应用.html</title>
+	<style>
+		*{
+			font-size: 25px;
+			font-weight: bold;
+		}
+		/*pp2*/
+		div li .box1 .pp2{
+			color: red;
+		}
+		div ul li .pp2{
+			color: purple;
+		}
+		div ul li .box1 .pp2{
+			color: pink;
+		}
+		div li .box1 #pp2{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="fa">
+		<div class="son">
+			<ul>
+				<li>li1</li>
+				<li>li2
+					<div class="box1">
+						<p id="pp1">pp1</p>
+						<p class="pp2" id="pp2">pp2</p>
+						<div class="box2">
+							<p class="pp3">pp3</p>
+						</div>
+					</div>
+					<div class="box2"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

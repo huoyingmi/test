@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-008-03-01-选择器优先级1.html</title>
+	<style>
+   /*根据就近原则，谁离得近被选中的元素就听谁的*/
+         .father{
+         	color: red;
+         	font-size: 40px;
+         }
+         .son{
+         	color: blue;
+         }
+         .pp1{
+         	color: pink;
+         }
+	</style>
+</head>
+<body>
+	<div class="father" id="father">
+		<div class="son" id="son">
+			<p class="pp1" id="pp1">我是段落</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -26,19 +26,16 @@
 	var oBox = document.getElementById('box');
 	// 定义一个变量表示 当鼠标按下时鼠标与物体边框的距离
 	var disX = 0,disY = 0;
-
 	// 当鼠标按下的事件 onmousedown
 	oBox.onmousedown = function(ev){
 		// 此时鼠标与物体边框的距离
 		disX = ev.clientX - oBox.offsetLeft;
 		disY = ev.clientY - oBox.offsetTop;
-
 		// 鼠标拖拽事件
 		document.onmouseover = function(ev){
 			oBox.style.left = ev.clientX - disX + 'px';
 			oBox.style.top = ev.clientY - disY + 'px';
 		}
-
 		// 当鼠标离开时，结束事件
 		document.onmouseup = function(){
 			document.onmouseover = null;

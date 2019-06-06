@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>034-generator函数的next方法的参数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(x){
+		console.log("x=",x); // 执行第一步打印：5
+		let y = yield (x+5);  //{value: 10, done: false}
+		console.log("y=",y); //undefined
+		let z = yield (y+10);
+		console.log("z=",z); //undefined
+	}
+
+	//调用generator函数之后，该函数并不执行，返回一个遍历器
+ 	//参数是x=5,
+	let g = gen(5);
+
+	// 调用遍历器对象的next方法后，返回一个对象，包括value和done属性
+	console.log(g.next()); //此处打印的是第一个yield   {value: 10, done: false}
+	console.log(g.next()); //{value: NaN, done: false}
+	//console.log(g.next()); //{value: undefined, done: true}
+
+
+</script>
+</html>

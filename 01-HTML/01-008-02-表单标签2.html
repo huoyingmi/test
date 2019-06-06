@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>01-08-02-表单标签2.html</title>
+	<style type="text/css">
+		textarea{
+			resize: none;
+		}
+	</style>
+</head>
+<body>
+	<form action="http://www.taobao.com/">
+		<p>
+			<select name="address">
+				<optgroup label="河南">
+					<option value="ly">洛阳</option>
+					<option value="xc" selected>许昌</option>
+					<option value="zz">郑州</option>
+				</optgroup>
+				<optgroup label="湖南">
+					<option value="cs">长沙</option>
+					<option value="zz">株洲</option>
+					<option value="hy">衡阳</option>
+				</optgroup>
+			</select>
+		</p>
+		<p>多行输入框
+			<!-- <textarea name="intr" id="intr" cols="20" rows="10">
+			</textarea> -->
+			<textarea name="inta" id="" cols="30" rows="10"></textarea>
+		</p>
+		<p>提示
+			<input type="text" list="names">
+			<datalist id="names">
+				<option>洛阳</option>
+			</datalist>
+		</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5-007-基本数据类型-Boolean布尔类型.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//真
+	var a = true;
+	console.log(a);
+	console.log(typeof a);
+    //true是真
+	if(true){
+		console.log('true');
+	}else{
+		console.log('false');
+	}
+	//非零数字
+	var aa = 22
+	if(aa){
+		console.log("22:",'true');
+	}else{
+		console.log('false');
+	}
+    //非空字符
+    var aaa = 'good';
+    if(aaa){
+		console.log("good:",'true');
+	}else{
+		console.log('false');
+	}
+	if(' '){
+		console.log("空格字符' ':",'true');
+	}else{
+		console.log('false');
+	}
+	//非空对象
+	var aaaa = {name:'tom'};
+    if(aaaa){
+		console.log("{name:'tom'}:",'true');
+	}else{
+		console.log('false');
+	}
+
+	//假
+	var b = false;
+	console.log('b:',b);
+	console.log(typeof b);
+	if(false){
+		console.log('true');
+	}else{
+		console.log('false');
+	}
+	//数字0
+	var bb = 0;
+    if(bb){
+		console.log("0:",'true');
+	}else{
+		console.log("0:",'false');
+	}
+	//空字符
+	var bbb = '';
+    if(bbb){
+		console.log("空字符'':",'true');
+	}else{
+		console.log("空字符'':",'false');
+	}
+	//null
+	var bbbb = null;
+    if(bbbb){
+		console.log("null:",'true');
+	}else{
+		console.log("null:",'false');
+	}
+	//undefined
+	var bbbbb;
+    if(bbbbb){
+		console.log("undefined:",'true');
+	}else{
+		console.log("undefined:",'false');
+	}
+</script>
+</html>

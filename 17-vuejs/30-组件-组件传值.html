@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>30-组件-组件传值.html</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li>吃饭</li>
+			<!-- <todo-item task="睡觉"></todo-item>
+			<todo-item task="打豆豆"></todo-item> -->
+			<todo-item 
+				v-for="(item,index) in items"
+				:task="item.task"
+				:id="item.id"
+				:key="item.id"
+			>
+
+			</todo-item>
+			<todo-item v-for=""></todo-item>
+		</ul>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	Vue.component('todo-item',{
+		/*//方法1
+		data(){
+			return{
+				task:'睡觉'
+			}
+		},
+		*/
+		//props:['task'], //接收属性 方法2
+		props:{
+			task:String,
+			id:Number
+		},
+		template:'<li>{{id}}-{{task}}</li>'
+	});
+	//实例函数
+	let vm1 = new Vue({
+		el:'#app',
+		data:{	//方法3
+			items:[ 
+				{
+					id:99,
+					task:"睡觉"
+				},
+				{
+					id:2,
+					task:"打豆豆"
+				}
+			]
+		}
+	});
+</script>
+</html>

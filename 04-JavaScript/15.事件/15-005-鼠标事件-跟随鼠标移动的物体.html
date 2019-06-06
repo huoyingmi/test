@@ -25,15 +25,7 @@
 <body>
 	<div id="box"></div>
 </body>
-<script src="../js/util.js"></script>
 <script>
-	var oBox = document.getElementById('box');
-
-	document.onmouseover = function(ev){
-		console.log(ev.clientX,ev.clientY);
-
-		oBox.style.left = getScrollLeft()  + ev.clientX + 'px';
-		oBox.style.top = getScrollTop() + ev.clientY + 'px';
-	}
+	
 </script>
 </html>

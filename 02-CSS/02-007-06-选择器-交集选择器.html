@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-007-06-选择器-交集选择器.html</title>
+	<style>
+	/*
+	    li.son{
+	    	color: red;
+	    }
+	    .son.p1{
+	    	color: red;
+	    }*/
+	    .p1.p2{
+	    	color: red;
+	    }
+	</style>
+</head>
+<body>
+	<div class="father">
+		段落五
+		<div class="son">
+			此处有蚊子
+			<p class="p2">段落一</p>
+			<ul id="snn">
+				<li><p class="p1 p2">li1</p></li>
+				<li class="son p1">li2</li>
+				<li class="son">li3</li>
+			</ul>
+		</div>
+		<div class="son">
+			<p class="p1">段落四</p>
+		</div>
+	</div>
+</body>
+</html>

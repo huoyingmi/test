@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-7-原子筛选-原子集合.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = '123fcfff34234gvf4fcre43_-';
+	console.log(str);
+	//找出0-9的数字
+	var reg1 = /[0-9]/g;
+	console.log("reg1:",str.replace(reg1,'*'));
+	var reg2 = /\d/g;
+	console.log("reg2:",str.replace(reg2,'*'));
+	//取反0-9之外的字母等
+	var reg3 = /[^0-9]/g;
+	console.log("reg3:",str.replace(reg3,'*'));
+	var reg4 = /\D/g;
+	console.log("reg4:",str.replace(reg4,'*'));
+	//取字符串中所有的数字、字母、下划线
+	var reg5 = /[a-z0-9_]/g;
+	console.log("reg5:",str.replace(reg5,'*'));
+	var reg6 = /\w/g;
+	console.log("reg6:",str.replace(reg6,'*'));
+	//取反，取数字、字母、下划线之外的
+	var reg7 = /[^0-9a-z_]/g;
+	console.log("reg7:",str.replace(reg7,'*'));
+	var reg8 = /\W/g;
+	console.log("reg8:",str.replace(reg8,'*'));
+	//
+	var reg9 = /[\t\n\r\f\v]/g;
+	console.log("reg9:",str.replace(reg9,'*'));
+	var reg10 = /\s/g;
+	console.log("reg10:",str.replace(reg10,'*'));
+	var reg11 = /[^\t\n\r\f\v]/g;
+	console.log("reg11:",str.replace(reg11,'*'));
+	var reg12 = /\S/g;
+	console.log("reg12:",str.replace(reg12,'*'));
+	var reg13 = /./g;
+	console.log("reg13:",str.replace(reg13,'*'));
+</script>
+</html>

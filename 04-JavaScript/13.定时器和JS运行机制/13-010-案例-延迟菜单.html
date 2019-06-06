@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-010-案例-延迟菜单.html</title>
+    <style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 400px;
+			margin: 100px auto;
+		}
+		.leftBox{
+			float: left;
+			width: 50px;
+			height: 300px;
+			background-color: #ccc;
+		}
+		.rightBox{
+			float: left;
+			display: none;
+			width: 300px;
+			height: 300px;
+			background-color: #f67;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="leftBox"></div>
+		<div class="rightBox"></div>
+	</div>
+</body>
+<script>
+	var oLeftbox = document.querySelector('.leftBox');
+	var oRightbox = document.querySelector('.rightBox');
+	var timer = 0;
+	
+	oLeftbox.onmouseover = oRightbox.onmouseover = function(){
+		clearTimeout(timer);//关闭延迟定时器2
+		oRightbox.style.display = "block";
+	}
+
+	oLeftbox.onmouseout = oRightbox.onmouseout = function(){
+		timer = setTimeout(function(){//延迟定时器1
+			oRightbox.style.display = "none";
+		},500);
+	}
+	/*
+	oRightbox.onmouseover = function(){
+		clearTimeout(timer);//关闭延迟定时器1
+		oRightbox.style.display = "block";
+	}
+
+	oRightbox.onmouseout = function(){
+		timer = setTimeout(function(){//延迟定时器2
+			oRightbox.style.display = "none";
+		},500);
+	}
+	*/
+
+</script>
+</html>

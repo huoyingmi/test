@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月12日2弹性布局.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 1000px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content:space-between;
+			
+		}
+		.son{
+        	width: 100px;
+        	height: 100px;
+        	line-height: 100px;
+        	text-align: center;
+        	background: pink;
+        }
+		.son4,.son5,.son6{
+            align-self: center;
+		}
+        .son7,.son8,.son9{
+        	align-self:flex-end;
+        }
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">son1</div>
+		<div class="son son2">son2</div>
+		<div class="son son3">son3</div>
+		<div class="son son4">son4</div>
+		<div class="son son5">son5</div>
+		<div class="son son6">son6</div>
+		<div class="son son7">son7</div>
+		<div class="son son8">son8</div>
+		<div class="son son9">son9</div>
+	</div>
+</body>
+</html>

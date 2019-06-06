@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>042-extends的继承.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		sayName(){
+			console.log("I am "+this.name);
+		}
+		sayAge(){
+			console.log("I am "+this.age+" years old");
+		}
+		//静态方法的添加要用 static
+		static sayHi(){
+			console.log("Hi...");
+		}
+	}
+
+	//实例函数
+	let p = new Person("Tom",20);
+	console.log(p);  //对象
+	//调用
+	p.sayName();
+	p.sayAge();
+	Person.sayHi();
+
+	class Student extends Person{
+		constructor(name,age,major){
+			super(name,age);
+			this.major = major;
+		}
+		sayMajor(){
+			console.log("I am from "+this.major);
+		}
+	}
+
+	let s = new Student("Leo",10,"computer");
+	console.log(s);
+
+	//调用
+	s.sayName();
+	s.sayAge();
+	s.sayMajor();
+	Student.sayHi();
+</script>
+</html>

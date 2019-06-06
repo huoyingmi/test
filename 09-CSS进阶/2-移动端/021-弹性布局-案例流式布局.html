@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-弹性布局-案例流式布局.html</title>
+	<style>
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+		ul{
+			width: 500px;
+			height: 700px;
+			border: 1px solid #000;
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: flex-start;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+			flex-shrink: 0
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+		<li>li6</li>
+	</ul>
+</body>
+</html>

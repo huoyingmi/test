@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-001-数组-是数组的定义.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = new Array(1,2,3,"a","b");
+	var arr2 = [1,2,3,"a","b"];
+
+	console.log(arr1);//[1,2,3,"a","b"]
+	console.log(arr2);//[1,2,3,"a","b"]
+
+	console.log(arr1[0]);//1
+	console.log(arr1[4]);//b
+
+	console.log(arr1.length);//5
+	arr2.length = 0;
+	console.log(arr2);//[]空数组
+	console.log(arr2.length);//0
+
+
+	//console.log(arr1 == arr2);//false
+</script>
+</html>

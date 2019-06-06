@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-23-正则字符串处理方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = '你好abc 123';
+	console.log(str);
+/*  str.charAt(index)
+	根据位置返回字符
+	 一个汉字是一个字节
+	位置在0和str.length-1之间,如果不在返回空字符
+    */
+	console.log(str.charAt(3));
+	console.log(str.charAt(1));
+	console.log(str.charAt(9));
+/*	str.charCodeAt(index)
+	根据位置返回字符的编码
+	位置在0和str.length-1之间,如果不在返回空字符
+	一个汉字是一个字节 
+	charCodeAt返回的是字符的Unicode码
+	Unicode码是统一的编码,Unicode码包含了ASCII码(0-127)
+	*/
+	console.log(str.charCodeAt(0));
+	console.log(str.charCodeAt(9));
+</script>
+</html>

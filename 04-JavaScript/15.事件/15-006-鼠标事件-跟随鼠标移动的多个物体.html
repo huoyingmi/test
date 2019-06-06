@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>162-跟随鼠标的物体多个.html</title>
+	<title>15-006-鼠标事件-跟随鼠标的物体多个.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -37,7 +37,6 @@
 <script src="../js/util.js"></script>
 <script>
 	var aDiv = document.getElementsByTagName('div');
-
 	document.onmouseover = function(ev){
 		// 第一个首先跟着走
 		aDiv[0].style.left = getScrollLeft() + ev.clientX + 'px';

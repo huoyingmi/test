@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-022-06-动画-停留状态.html</title>
+	<style>
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+		.box{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			margin: 100px 200px;
+			animation: sport 3s linear 1s;
+			/*animation-fill-mode: none;*/
+			/*animation-fill-mode: backwards;*/
+			/*animation-fill-mode: forwards;*/
+			animation-fill-mode:both;
+		}
+		@keyframes sport{
+			0%{
+				transform: rotate(20deg);
+			}
+			25%{
+				transform: rotate(50deg);
+			}
+			50%{
+				transform: rotate(80deg);
+			}
+			75%{
+				transform: rotate(110deg);
+			}
+			100%{
+				transform: rotate(130deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">box</div>
+</body>
+</html>

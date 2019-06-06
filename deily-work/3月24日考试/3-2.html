@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-2.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(a){
+		console.log(a);//5
+		let b = yield (a * 2);//{value: 10, done: false}
+		console.log(b); //undefined
+		let c= yield (b + 15);//{value: NaN, done: false}
+		console.log(c); //undefined
+		let d=yield(c - 10);//{value: NaN, done: false}
+		console.log(d); //5
+		return (d/100);//{value: 105, done: true};
+
+	}
+	let g = gen(10); //不执行，返回遍历器对象
+	console.log(g.next());//10  {value: 10, done: false}
+	console.log(g.next());//NaN {value: NaN, done: false}
+	console.log(g.next(5));//NaN {value: NaN, done: false}
+	 console.log(g.next(100));//105 {value: 105, done: true};
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4-001-设计模式-观察者模式(发布订阅者模式).html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+       function Teacher(name,task){
+          this.name = name;
+          this.studentsArr = [];
+       }
+       Teacher.prototype = {
+           constructor:Teacher,
+           register:function(student){
+           	   this.studentsArr.push(student);
+           }
+       }
+       w.Teacher = Teacher;
+	})(window);
+	(function(w){
+        function Student(name,teacher){
+            this.name = name;
+            // teacher.studentsArr.push(this);
+            teacher.register(this);
+        }
+        Student.prototype = {
+            constructor:Student,
+        }
+        w.Student = Student;
+	})(window);
+
+	var t1 = new Teacher('Tom');
+	console.log(t1);
+	var s1 = new Student('Leo',t1);
+	console.log(s1);
+</script> 
+</html>

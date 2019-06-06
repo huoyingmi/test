@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-019-02-过度延迟.html</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: #000;
+			/*transition-property: width,height,background;
+			transition-duration: 4s,2s,3s;
+			transition-delay: 1s;*/
+			transition: width 2s,height 3s,background 5s;
+		}
+		.box1:hover{
+			width: 600px;
+			height: 600px;
+			background: red;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: red;
+			transition: width 2s linear 2s;
+		}
+		.box2:hover{
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>

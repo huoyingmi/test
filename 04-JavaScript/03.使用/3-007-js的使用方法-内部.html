@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-07-js的使用方法-内部.html</title>
+    <style>
+    	.box{
+    		width: 200px;
+    		height: 200px;
+    		background: #f00;
+    		margin: 100px 200px;
+    	}
+    </style>
+    <script>
+    	//函数的概念  function关键字定义一个函数 toBig是函数名 （）执行函数
+    	function toBig(){
+    		/*
+    		document.getElementById('box').style.width = '400px';
+    		document.getElementById('box').style.height = '400px';
+    		document.getElementById('box').style.backgroundColor = 'blue';
+    		*/
+    		var oBox = document.getElementById('box');
+    		oBox.style.width = '400px';
+    		oBox.style.height = '400px';
+    		oBox.style.backgroundColor = 'blue';
+    	}
+    	function toSmall(){
+    		var oBox = document.getElementById('box');
+    		oBox.style.width = '200px';
+    		oBox.style.height = '200px';
+    		oBox.style.backgroundColor = '#f00';
+    	}
+    </script>
+</head>
+<body>
+	<div class="box" id="box" 
+	onmouseover="toBig()"
+	onmouseout="toSmall()"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9-005-作用域-作用域的决定0.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 1;
+	function fn1(){
+		var a = 2;
+		return a;
+	}
+	console.log("1:",a); //1 全局变量 打印1
+	console.log("2:",fn1());//2 当调用函数fn时，内部定义局部变量 打印2
+</script>
+</html>

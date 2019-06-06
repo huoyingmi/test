@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-022-01-动画-执行.html</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			transition: width 2s;
+		}
+		.box1:hover{
+			width: 600px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			margin-top: 20px;
+			animation-name: sport;
+			animation-duration: 2s;
+		}
+		@keyframes sport{
+			form{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+			to{
+				width: 600px;
+				height: 500px;
+				background: red;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>

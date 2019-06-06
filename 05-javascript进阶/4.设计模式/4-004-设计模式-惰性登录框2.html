@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4-004-设计模式-惰性登录框.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 300px;
+			background: #ccc;
+			margin: 100px 300px;
+			/*display: none;*/
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="登录">
+	<!-- <div class="login"></div> -->
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.querySelector('.box');
+
+    function getBox(fn){
+	    var obj = null;
+       	return function(){
+       		if(!obj){
+	       		obj = fn();
+	       	}
+	       	return obj;
+       	}
+    }
+    
+	function createBox(){
+        var oDiv = document.createElement('div');
+		oDiv.className = 'box';
+		document.body.appendChild(oDiv); 
+		return oDiv;
+	}
+
+	var createSingleBox = getBox(createBox);
+	oBtn.onclick = function(){
+		// createBox();
+		createSingleBox();
+	}
+</script>
+</html>

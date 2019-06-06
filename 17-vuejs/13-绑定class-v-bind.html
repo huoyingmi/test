@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13-绑定class-v-bind.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			background-color: yellow;
+		}
+		.error{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>我是段落</p>
+		<p class="active error">class="active error"</p>
+		<p :class="{active:true,error:true}">:class="{active:true,error:true}"</p>
+		<p :class="{active:isActive,error:isError}">:class="{active:isActive,error:isError}"</p>
+		<p :class="{active:isActive}" class="error">:class="{active:isActive}" class="error"</p>
+		<p :class="['active','error']">:class="['active','error']"</p>
+		<p :class="[isActive?'active':'','error']">:class="[isActive?'active':'','error']"</p>
+		<p :class="classObj">:class="classObj"</p>
+		<p :class="classArr">:class="classArr"</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	//实例函数
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			// isActive:true,
+			isActive:false,
+			isError:true,
+			classObj:{
+				active:true,
+				error:true
+			},
+			classArr:[
+				'active','error'
+			]
+		}
+	});
+	// vm.message = "bbb";
+</script>
+</html>

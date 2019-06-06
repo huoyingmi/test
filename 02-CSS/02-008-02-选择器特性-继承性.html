@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-008-02-选择器特性-继承性.html</title>
+	<style>
+	/*a不能继承父元素的color/underline/text-indent/
+	h标签不能继承父元素的font-size、font-weight*/
+		div{
+			color: red;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+			font-family: SimSun;
+
+			text-decoration: underline;
+			text-decoration: overline;
+			text-decoration: line-through;
+			/*text-align: center;*/
+			text-indent: 2em;
+			text-shadow: 10px 10px 5px black;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+				li1
+				<h2>我是标题2</h2>
+				<p>我是段落1</p>
+			</li>
+			<li>
+				li2 <br>
+				<a href="#">我是a链接</a>
+			</li>
+			<li>li3</li>
+		</ul>
+		<p class="pp1">我是段落</p>
+	</div>
+</body>
+</html>

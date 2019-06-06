@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5-014-数据类型转换-转数值-显式转换Number函数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = '123';
+	console.log(parseInt(a));
+	console.log(typeof parseInt(a));
+	console.log('Number(123):',Number(a));
+	var b = '123aa';
+	console.log(parseInt(b));
+	console.log(typeof parseInt(b));
+	console.log('Number(123aa):',Number(b));
+
+	var c = '1.23';
+	console.log(parseFloat(c));
+	console.log(typeof parseFloat(c));
+	console.log('Number(1.23):',Number(c));
+	var d = '1.23aa';
+	console.log(parseFloat(d));
+	console.log(typeof parseFloat(d));
+	console.log('Number(1.23aa):',Number(d));
+
+    console.log(Number(-123));
+    console.log(Number(''));
+    console.log(Number('   '));
+
+    console.log(Number(true));
+    console.log(Number(false));
+    
+    console.log(Number(null));
+    console.log(Number(undefined));
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-007-案例-数码时钟-文字版.html</title>
+    <style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			width: 400px;
+			margin: 100px auto;
+			text-align: center;
+			font-size: 60px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+	
+	</div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	// 处理时间的个数
+	function to2Str(num){
+		
+		if(num > 10){
+			return num = "" + num; 
+		}else{
+			return num = "0" + num;
+		}
+		
+		// return num < 10 ? "0"+num : ""+num;
+	}
+	// 封装函数
+	function handleTimer(){
+		// 依据系统当前时间创建一个Date对象
+		var today = new Date();
+		// 获取现在时间
+		var iHour = today.getHours(),iMinute = today.getMinutes(),iSecond = today.getSeconds();
+		// 将时间作拼接处理
+		var sTime = to2Str(iHour) +":"+ to2Str(iMinute) +":"+ to2Str(iSecond);
+
+		// 将时间添加到页面中显示
+		oTimer.innerHTML = sTime;
+	}
+	// 循环定时器
+	setInterval(handleTimer,1000);
+	handleTimer();
+
+
+</script>
+</html>

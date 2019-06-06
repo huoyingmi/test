@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月18日.html</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+
+	let getDataPromise = (url)=>{
+ 		return new Promise((resolve,reject)=>{
+ 			$.get(url,data=>{
+ 				resolve(data);
+ 			})
+ 		})
+ 	}
+
+ 	let promise = getDataPromise('http://127.0.0.1:3000');
+ 	promise
+ 	.then(data1=>{
+ 		return getDataPromise(data1.kuazhu_url);  //得到promise对象，获得地址
+ 	})
+ 	.then(data2=>{
+ 		console.log(data2.userInfo.phoneNum); //直接将号码打印
+ 	})
+
+</script>
+</html>

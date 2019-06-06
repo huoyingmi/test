@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7-011-循环结构-for循环实例选项卡.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			cursor: pointer;
+		}
+		#tab-list{
+			overflow: hidden;
+		}
+		#tab-list li{
+			float: left;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			margin-left: 30px;
+			font-size: 20px;
+			font-weight: 600;
+		}
+		#tab-container{
+			margin-top: 30px;
+		}
+		#tab-container li{
+			display: none;
+			width: 400px;
+			height: 400px;
+			line-height: 400px;
+			text-align: center;
+			border: 1px solid #000;
+			font-size: 20px;
+			font-weight: 600;
+		}
+		.active{
+			color: #f00;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tab-list">
+		<li class="active">热门</li>
+		<li>家电</li>
+		<li>电视</li>
+		<li>电脑</li>
+	</ul>
+	<ul id="tab-container">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var aBtn = document.querySelectorAll('#tab-list li');
+	// console.log(aBtn);
+	var aContent = document.querySelectorAll('#tab-container li');
+	// console.log(aContent);
+
+	for(var i=0; i<aBtn.length; i++){
+		aBtn[i].index = i;//动态添加一个属性保存i值
+		aBtn[i].onclick = function(){
+			//console.log(i); //拿到循环退出后的i值 i=4
+			// aBtn[i].className = 'active'; //错误的因为i=4
+
+			for(var j=0; j<aBtn.length; j++){
+				aBtn[j].className = '';
+				aContent[j].style.display = 'none';
+			}
+
+			// 函数执行的时候，是谁在执行就是指谁
+			// console.log(this);
+			this.className = 'active';
+			aContent[this.index].style.display = 'block';
+			
+		}
+	}
+</script>
+</html>

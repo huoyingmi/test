@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-set的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	//数组去重
+	let arr = [11,22,33,44,22,44];
+	console.log(arr);
+	let s2 = new Set(arr);
+	console.log(s2);
+	let arr1 = [...s2];
+	console.log(arr1);
+	*/
+	let arr = [];
+	console.log(arr);
+	let s = new Set();
+	// add(value):添加某个值
+	s.add(11);
+	s.add(22);
+	s.add(33);
+	s.add(44);
+	console.log(s);
+	console.log(s.size);
+
+  	// delete(value):删除某个值,返回一个布尔值,表示删除是否成功
+	s.delete(22);
+	console.log(s);
+	console.log(s.size);
+
+	// has(value):返回一个布尔值,表示该值是否为Set的成员
+	console.log(s.has(22));
+	console.log(s.has(33));
+	console.log(s.has(222));
+
+ 	// clear():清除所有值,没有返回值
+ 	console.log(s.clear());  //返回值是undefined
+</script>
+</html>

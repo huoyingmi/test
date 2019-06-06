@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-弹性布局-项目排列方向.html</title>
+	<style>
+		.father{
+			width: 800px;
+			height: 800px;
+			border: 1px solid #000;
+			margin: 50px 100px;
+			/*弹性布局默认水平排布*/
+			display: flex;
+			/*项目的排列方式*/
+			/*flex-direction: row;  水平方向,起点在左端*/
+			/*flex-direction: row-reverse;  /*水平方向,起点在右端*/
+			/*flex-direction: column;  /*垂直方向,起点在上沿*/
+			flex-direction: column-reverse;  /*垂直方向,起点在下沿*/
+		} 
+		.son{
+			height: 100px;
+		}
+		.son1{
+			width: 100px;
+			background: #f00;
+		}
+		.son2{
+			width: 200px;
+			background: #faa;
+		}
+		.son3{
+			width: 300px;
+			background: #f60;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">son1</div>
+		<div class="son son2">son2</div>
+		<div class="son son3">son3</div>
+	</div>
+</body>
+</html>

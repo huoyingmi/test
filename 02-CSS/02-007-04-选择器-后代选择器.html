@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-007-04-选择器-后代选择器.html</title>
+	<style>
+		/*div p{
+			color: red;
+		}
+		div .son p{
+			color: blue;
+		}
+		.father p{
+			color: green;
+		}
+		.son .p1{
+			color: yellow;
+		}
+		div .p1{
+			color: pink;
+		}
+		.son #snn{
+			color: red;
+		}
+		#snn .son{
+			color: blue;
+		}*/
+		.son li p{
+			color: purple;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		段落五
+		<div class="son">
+			此处有蚊子
+			<p>段落一</p>
+			<p class="p1">段落二</p>
+			<ul id="snn">
+				<li><p>li1</p></li>
+				<li class="son">li2</li>
+				<li>li3</li>
+			</ul>
+		</div>
+		<p class="p1">段落三</p>
+		<div class="son">
+			<p>段落四</p>
+		</div>
+	</div>
+</body>
+</html>

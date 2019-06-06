@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3月11日屏幕适配.html</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			float: left;
+			width: 5rem;
+		}
+		h4{
+			float: left;
+			font-size: 0.1rem;
+			margin: 0px 10px;
+		}
+		.box{
+			float: left;
+			width: 2rem;
+			height: 2rem;
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+	<!-- 页面中有一张图片，一段文字，一个红色的盒子，完成屏幕适配 -->
+	<img src="../ktao/img/logo.png" alt="">
+	<h4>我是火影忍者</h4>
+	<div class="box"></div>
+</body>
+<script>
+	(function(win,doc){
+        var oHtml = document.getElementsByTagName('html')[0];
+        function refreshFontSize(){
+            var iWidth = doc.body.clientWidth || doc.documentElement.clientWidth;
+            var iFontSize = iWidth/10;
+            oHtml.style.fontSize = iFontSize + 'px';
+        }
+        refreshFontSize();
+        win.addEventListener('resize',refreshFontSize,false);
+
+
+	})(window,document);
+</script>
+</html>

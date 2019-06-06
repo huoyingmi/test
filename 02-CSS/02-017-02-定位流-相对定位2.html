@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-017-02-定位流-相对定位2.html</title>
+	<style>
+	/*因为相对定位是不脱离标准流的，所以不区分：块状、行内、行内块状*/
+	/*当元素有margin、padding、border时，相对定位在margin、padding、border起作用后起效*/
+	/*相对定位用来对元素进行微调、设置绝对定位的参考元素*/
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: relative;
+			bottom: -40px;
+			right: 20px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+		}
+		span{
+			width: 200px;
+			height: 100px;
+			background: green;
+			margin-left: 20px;
+			padding-top: 20px;
+			/*float: left;*/
+			position: relative;
+			top: 20px;
+			left: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<span>span</span>
+</body>
+</html>

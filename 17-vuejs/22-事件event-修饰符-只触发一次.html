@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>22-事件event-修饰符-只触发一次.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.large-box{
+			width: 500px;
+			height: 500px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			background: gray;
+		}
+		.big-box{
+			width: 300px;
+			height: 300px;
+			margin: 50px auto;
+			border: 1px solid #000;
+			background: blue;
+		}
+		.small-box{
+			width: 100px;
+			height: 100px;
+			margin: 50px auto;
+			border: 1px solid #000;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">  <!-- @是v-on的间写体 -->
+		<div class="large-box" @click.once='clickLargeBox()'>
+			<div class="big-box" @click.once="clickBigBox()">
+				<div class="small-box" @click="clickSmallBox()">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	//实例函数
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			},
+		methods:{
+			clickSmallBox(msg,event){
+				console.log('clickSmallBox')
+			},
+			clickBigBox(event){
+				console.log('clickBigBox')
+			},
+			clickLargeBox(){
+				console.log('clickLargeBox')
+			}
+		}
+	});
+</script>
+</html>

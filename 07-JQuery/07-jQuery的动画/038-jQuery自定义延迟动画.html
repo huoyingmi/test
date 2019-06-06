@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>038-jQuery自定义延迟动画.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: #f60;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button>开始动画</button>
+	<div></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").eq(0).on("click",function(){
+			
+			$('div').delay(1000).animate({width:"300px"},1000,function(){
+				console.log("animate 1");
+			}).delay(1000);
+			$('div').animate({height:"300px"},1000,function(){
+				console.log("animate 2");
+			})
+			$('div').animate({opacity:0.5},1000,function(){
+				console.log("animate 3");
+			})
+			
+		});
+
+	})
+</script>
+</html>

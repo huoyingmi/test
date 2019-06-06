@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019-jQuery的操作尺寸.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: #f60;
+			border: 10px solid #ccc;
+			margin-bottom: 5px;
+			padding: 5px;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background: #cce;
+			border: 10px solid #000;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log("width::",$('div').width());
+		// console.log("width::",$('div').width(150));
+		console.log('height::',$('div').height());
+		// console.log('height::',$('div').height(200));
+
+		console.log("innerWidth::",$('div').innerWidth());
+		console.log("innerHeight::",$('div').innerHeight());
+
+		console.log("outerWidth::",$('div').outerWidth());
+		console.log("outerHeight::",$('div').outerHeight());
+	})
+</script>
+</html>

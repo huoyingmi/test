@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+//我是注释一 编译被删除，就是翻译到css中消失
+/*我是注释二 编译被保留，就是会翻译到css中*/
+
+//变量@变量名：值；
+@color:#f00;
+@color1:#f0f;
+@width:200px;
+@height:200px;
+
+.box1{
+	color: @color;
+	width: @width;
+	height: @height;
+	background: #ccc;
+}
+.box2{
+	color: @color1;
+}
+ 

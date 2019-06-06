@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-017-14-定位流中元素显示的顺序2.html</title>
+	<style>
+	/*父级元素z-index属性会影响子元素的z-index值，子元素的最终值会是所有父元素中最顶级的父元素z-index值*/
+	/*如下:默认情况下，fa1和fa2相对定位，fa2会覆盖fa1;son1和son2绝对定位，son2会覆盖son1;但设z-index后，父元素z-index值大的在前面*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.fa1{
+			width: 300px;
+			height: 300px;
+			background: #ccf;
+			position: relative;
+			top: 50px;
+			left: 50px;
+			/*z-index: 3;*/
+		}
+		.son1{
+			width: 200px;
+			height: 200px;
+			background: #adcfe5;
+			position: absolute;
+			top: 90px;
+			left: 150px;
+			z-index: 1;
+		}
+		.fa2{
+			width: 300px;
+			height: 300px;
+			background: #ffda98;
+			position: relative;
+			top: 0;
+			left: 0;
+			/*z-index: 2;*/
+		}
+		.son2{
+			width: 200px;
+			height: 200px;
+			background: #24ba76;
+			position: absolute;
+			top: -50px;
+			left: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="fa1">
+		<div class="son1"></div>
+	</div>
+	<div class="fa2">
+		<div class="son2"></div>
+	</div>
+</body>
+</html>
