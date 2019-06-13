@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-运行时错误RuntimeError.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	// ReferenceError 变量引用异常触发的错误
+	console.log(a);//Uncaught ReferenceError: a is not defined
+	*/
+	/*
+	// TypeError类型使用错误
+	var a = 1;
+	console.log(a());//Uncaught TypeError: a is not a function
+	*/
+	// RangeError递归爆栈错误
+	function fn(){
+		fn();
+	}
+	fn();//Uncaught RangeError: Maximum call stack size exceeded
+</script>
+</html>
